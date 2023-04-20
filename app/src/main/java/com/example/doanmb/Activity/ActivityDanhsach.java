@@ -59,7 +59,7 @@ public class ActivityDanhsach extends AppCompatActivity {
         btnKiemTra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityDanhsach.this, ActivityCheck.class);
+                Intent intent = new Intent(ActivityDanhsach.this, ActivityThongBaoDienTu.class);
                 startActivity(intent);
             }
         });

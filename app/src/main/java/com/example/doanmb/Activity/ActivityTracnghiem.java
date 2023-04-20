@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -108,7 +107,7 @@ public class ActivityTracnghiem extends AppCompatActivity implements View.OnClic
         return list;
     }
     public void FindID(){
-        tvQuestion = findViewById(R.id.tvQuestion);
+        tvQuestion = findViewById(R.id.tv);
         tvContentQues = findViewById(R.id.tvQues);
         btnAns1 = findViewById(R.id.btnAns1);
         btnAns2 = findViewById(R.id.btnAns2);

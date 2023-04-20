@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnStart = findViewById(R.id.btnStart);
-        TextView textview2 = findViewById(R.id.tvQuestion);
+        TextView textview2 = findViewById(R.id.tv);
         setTextViewColor(textview2, getResources().getColor(R.color.threecl), getResources().getColor(R.color.threecl1), getResources().getColor(R.color.threecl2));
 
         btnStart.setOnClickListener(new View.OnClickListener() {

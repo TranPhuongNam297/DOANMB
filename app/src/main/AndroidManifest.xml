@@ -27,6 +27,8 @@
         <activity android:name="com.example.doanmb.Activity.ActivityVocab" />
         <activity android:name="com.example.doanmb.Activity.ActivityThongBaoTracNghiem" />
         <activity android:name="com.example.doanmb.Activity.ActivityBeforedoQuestion" />
+        <activity android:name="com.example.doanmb.Activity.ActivityThongBaoDienTu" />
+        <activity android:name="com.example.doanmb.Activity.ActivityBeforefillBlanks" />
 
     </application>
 
