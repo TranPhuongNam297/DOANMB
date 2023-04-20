@@ -1,4 +1,4 @@
-package com.example.doanmb;
+package com.example.doanmb.Activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.doanmb.R;
 
 public class ActivityDanhsach extends AppCompatActivity {
 
@@ -32,7 +34,7 @@ public class ActivityDanhsach extends AppCompatActivity {
         btnYoutube.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityDanhsach.this,ActivityYoutube.class);
+                Intent intent = new Intent(ActivityDanhsach.this, ActivityListening.class);
                 startActivity(intent);
             }
         });
@@ -49,7 +51,7 @@ public class ActivityDanhsach extends AppCompatActivity {
         btnTracNghiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityDanhsach.this, ActivityTracnghiem.class );
+                Intent intent = new Intent(ActivityDanhsach.this, ActivityThongBaoTracNghiem.class );
                 startActivity(intent);
             }
         });

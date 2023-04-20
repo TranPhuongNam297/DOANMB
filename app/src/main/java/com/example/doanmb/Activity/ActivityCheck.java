@@ -1,4 +1,4 @@
-package com.example.doanmb;
+package com.example.doanmb.Activity;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -14,6 +14,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.doanmb.AnswerCheck;
+import com.example.doanmb.QuesCheck;
+import com.example.doanmb.R;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
