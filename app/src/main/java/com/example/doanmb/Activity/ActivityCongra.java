@@ -1,6 +1,5 @@
-package com.example.doanmb;
+package com.example.doanmb.Activity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
@@ -10,39 +9,31 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.doanmb.R;
 
-public class MainActivity extends AppCompatActivity {
-    TextView tvNPT;
-    Button btnStart;
-    @SuppressLint("MissingInflatedId")
+public class ActivityCongra extends AppCompatActivity {
+    Button btnBack;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_congra);
 
-        btnStart = findViewById(R.id.btnStart);
-        tvNPT = findViewById(R.id.tvNPT);
-        TextView textview2 = findViewById(R.id.tvQuestion);
+        TextView textview2 = findViewById(R.id.textView5);
         setTextViewColor(textview2, getResources().getColor(R.color.threecl), getResources().getColor(R.color.threecl1), getResources().getColor(R.color.threecl2));
 
-        btnStart.setOnClickListener(new View.OnClickListener() {
+        btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ActivityDanhsach.class);
-                startActivity(intent);
-            }
-        });
-        tvNPT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                Intent intent = new Intent(ActivityCongra.this, ActivityDanhsach.class);
                 startActivity(intent);
             }
         });
     }
-    private void setTextViewColor(TextView textView,int ...color){
+    private void setTextViewColor(TextView textView, int ...color){
         TextPaint paint = textView.getPaint();
         float width = paint.measureText(textView.getText().toString());
         Shader shader = new LinearGradient(0,0,width,textView.getTextSize(),color,null,Shader.TileMode.CLAMP);

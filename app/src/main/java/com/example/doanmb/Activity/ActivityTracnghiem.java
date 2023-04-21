@@ -1,4 +1,4 @@
-package com.example.doanmb;
+package com.example.doanmb.Activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,6 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.doanmb.Answer;
+import com.example.doanmb.Question;
+import com.example.doanmb.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +32,7 @@ public class ActivityTracnghiem extends AppCompatActivity implements View.OnClic
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tracnghiem);
+        setTitle("Testing");
         FindID();
         listQues = getListQuention();
         if (listQues.isEmpty()){
@@ -102,7 +107,7 @@ public class ActivityTracnghiem extends AppCompatActivity implements View.OnClic
         return list;
     }
     public void FindID(){
-        tvQuestion = findViewById(R.id.tvQuestion);
+        tvQuestion = findViewById(R.id.tv);
         tvContentQues = findViewById(R.id.tvQues);
         btnAns1 = findViewById(R.id.btnAns1);
         btnAns2 = findViewById(R.id.btnAns2);
