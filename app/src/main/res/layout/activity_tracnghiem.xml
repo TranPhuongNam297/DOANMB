@@ -17,10 +17,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-   <RelativeLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="30dp"><![CDATA[
+ <RelativeLayout
+     android:id="@+id/relativeLayout"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"><![CDATA[
 
 
 
@@ -96,7 +96,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/tv"
+        android:id="@+id/tvQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -112,5 +112,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+ <Button
+        android:id="@+id/btnback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAns4" />
+
+ <TextView
+     android:id="@+id/countdown"
+     android:layout_width="50dp"
+     android:layout_height="wrap_content"
+     android:textAlignment="center"
+     android:layout_marginTop="8dp"
+     android:layout_marginEnd="8dp"
+     android:background="@drawable/bg_button_custom"
+     android:text="30"
+     android:textSize="24sp"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

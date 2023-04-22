@@ -30,6 +30,7 @@
         <activity android:name="com.example.doanmb.Activity.ActivityThongBaoDienTu" />
         <activity android:name="com.example.doanmb.Activity.ActivityBeforefillBlanks" />
         <activity android:name="com.example.doanmb.Activity.ActivityShowVocab" />
+        <activity android:name="com.example.doanmb.Activity.ActivityFail" />
 
     </application>
 

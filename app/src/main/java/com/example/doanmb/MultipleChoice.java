@@ -2,7 +2,7 @@ package com.example.doanmb;
 
 import java.io.Serializable;
 
-public class TracNghiem implements Serializable {
+public class MultipleChoice implements Serializable {
     private int id;
     private String Cau_Hoi;
     private String Dap_An_1;
@@ -12,7 +12,7 @@ public class TracNghiem implements Serializable {
     private String Dap_An_Dung;
     private String Muc_Do;
 
-    public TracNghiem(int id, String cau_Hoi, String dap_An_1, String dap_An_2, String dap_An_3, String dap_An_4, String dap_An_Dung, String muc_Do) {
+    public MultipleChoice(int id, String cau_Hoi, String dap_An_1, String dap_An_2, String dap_An_3, String dap_An_4, String dap_An_Dung, String muc_Do) {
         this.id = id;
         Cau_Hoi = cau_Hoi;
         Dap_An_1 = dap_An_1;
