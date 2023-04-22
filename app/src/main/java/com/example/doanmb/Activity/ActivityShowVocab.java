@@ -2,6 +2,7 @@ package com.example.doanmb.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -32,6 +33,7 @@ public class ActivityShowVocab extends AppCompatActivity implements VocabAdapter
         dbHelper = new DBHelper(this);
         recyclerView = (RecyclerView) findViewById(R.id.view_rc);
         vocabs = dbHelper.getVocab();
+        Log.d("mang ne", String.valueOf(vocabs));
         vocabAdapter = new VocabAdapter(ActivityShowVocab.this, vocabs, this);
         recyclerView.setAdapter(vocabAdapter);
 

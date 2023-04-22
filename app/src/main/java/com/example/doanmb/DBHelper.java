@@ -3,6 +3,7 @@ package com.example.doanmb;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.doanmb.Vocab;
 
@@ -63,6 +64,7 @@ public class DBHelper {
             tmp.add(vocab);
         }
         db.close();
+        Log.d("mang tmp", String.valueOf(tmp));
         return tmp;
     }
 
