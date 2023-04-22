@@ -3,7 +3,8 @@ package com.example.doanmb;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
+
+import com.example.doanmb.Vocab;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -21,19 +22,19 @@ public class DBHelper {
         this.context = context;
     }
 
-    public SQLiteDatabase openDB(){
+    public SQLiteDatabase openDB() {
         return context.openOrCreateDatabase(DB_NAME, Context.MODE_PRIVATE, null);
     }
 
-    public void CopydatabaseFromAssets(){
+    public void CopydatabaseFromAssets() {
         File dbFile = context.getDatabasePath(DB_NAME);
 
-        if(!dbFile.exists()){
+        if (!dbFile.exists()) {
             try {
                 InputStream is = context.getAssets().open(DB_NAME);
                 OutputStream os = new FileOutputStream(dbFile);
                 byte[] buffer = new byte[1024];
-                while (is.read(buffer) > 0){
+                while (is.read(buffer) > 0) {
                     os.write(buffer);
                 }
                 os.flush();
@@ -45,12 +46,12 @@ public class DBHelper {
         }
     }
 
-    public ArrayList<Vocab> getVocab(){
+    public ArrayList<Vocab> getVocab() {
         ArrayList<Vocab> tmp = new ArrayList<>();
         db = openDB();
         String sql = "SELECT * FROM Vocab";
         Cursor cursor = db.rawQuery(sql, null);
-        while (cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             int id = cursor.getInt(0);
             String English = cursor.getString(1);
             String Tieng_Viet = cursor.getString(2);
