@@ -1,10 +1,11 @@
-package com.example.doanmb;
+package com.example.doanmb.DataBase;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.example.doanmb.MultipleChoice;
 import com.example.doanmb.Vocab;
 
 import java.io.File;
@@ -92,7 +93,7 @@ public class DBHelper {
 //    public ArrayList<MultipleChoice> getMultipleChoice(){
 //        ArrayList<MultipleChoice> tmp = new ArrayList<>();
 //        db = openDB();
-//        String sql = "SELECT * FROM TracNghiem Where Muc_Do Like "";
+//        String sql = "SELECT * FROM TracNghiem";
 //        Cursor cursor = db.rawQuery(sql, null);
 //        while (cursor.moveToNext()) {
 //            int id = cursor.getInt(0);

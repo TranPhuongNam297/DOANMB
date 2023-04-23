@@ -2,7 +2,6 @@ package com.example.doanmb.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.doanmb.Activity.ActivityShowInfoWord;
 import com.example.doanmb.Activity.ActivityShowVocab;
-import com.example.doanmb.Activity.ActivityVocab;
 import com.example.doanmb.R;
 import com.example.doanmb.Vocab;
 
@@ -53,20 +51,6 @@ public class VocabAdapter extends RecyclerView.Adapter<VocabAdapter.VocabVH> imp
         Vocab vocab = vocabsFilter.get(position);
         holder.word.setText(vocab.getEnglish());
         holder.wordV.setText(vocab.getTieng_Viet());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(context, ActivityShowInfoWord.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("Tieng Viet", vocab.getTieng_Viet());
-                bundle.putString("English", vocab.getEnglish());
-                bundle.putString("Phat Am", vocab.getPhat_Am());
-                bundle.putString("Vi Du", vocab.getVi_Du());
-                bundle.putString("Vi Du2", vocab.getVi_Du2());
-                i.putExtras(bundle);
-                context.startActivity(i);
-            }
-        });
     }
 
     @Override
