@@ -47,11 +47,10 @@ public class DBHelper {
         }
     }
 
-    public ArrayList<Vocab> getVocab(String chude) {
+    public ArrayList<Vocab> getVocab() {
         ArrayList<Vocab> tmp = new ArrayList<>();
         db = openDB();
-        String sql = "SELECT * FROM Vocab WHERE Chu_De LIKE '%" + chude + "%'";
-
+        String sql = "SELECT * FROM Vocab";
         Cursor cursor = db.rawQuery(sql, null);
         while (cursor.moveToNext()) {
             int id = cursor.getInt(0);
