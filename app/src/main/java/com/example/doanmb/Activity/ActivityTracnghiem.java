@@ -48,18 +48,62 @@ public class ActivityTracnghiem extends AppCompatActivity {
         FindID();
 
         Intent intent = getIntent();
-        int listde = intent.getIntExtra("DeT", 0);
-        int listtb = intent.getIntExtra("Trung BinhT", 0);
-        int listk = intent.getIntExtra("KhoT", 0);
-        if (listde == 0){
-            solveDe();
-        }
-        if (listtb == 0){
-            solveTrungBinh();
-        }
-        if (listk == 0){
-            solveKho();
-        }
+        DBHelper dbHelper = new DBHelper(ActivityTracnghiem.this);
+
+        choiceList = dbHelper.getQuestion(intent.getStringExtra("Do_Kho"));
+        choiceSize = choiceList.size();
+
+        showNextQuestion();
+
+        btnAns1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnAns1.getText().toString().equals(currentQues.getDap_An_Dung())){
+                    showNextQuestion();
+                    countTrue++;
+                }else {
+                    showNextQuestion();
+                    countFalse++;
+                }
+            }
+        });
+
+        btnAns2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnAns2.getText().toString().equals(currentQues.getDap_An_Dung())){
+                    showNextQuestion();
+                    countTrue++;
+                }else {
+                    showNextQuestion();
+                    countFalse++;
+                }
+            }
+        });
+        btnAns3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnAns3.getText().toString().equals(currentQues.getDap_An_Dung())){
+                    showNextQuestion();
+                    countTrue++;
+                }else {
+                    showNextQuestion();
+                    countFalse++;
+                }
+            }
+        });
+        btnAns4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnAns4.getText().toString().equals(currentQues.getDap_An_Dung())){
+                    showNextQuestion();
+                    countTrue++;
+                }else {
+                    showNextQuestion();
+                    countFalse++;
+                }
+            }
+        });
 
     }
 

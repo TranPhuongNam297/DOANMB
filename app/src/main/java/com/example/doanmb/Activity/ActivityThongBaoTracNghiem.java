@@ -38,25 +38,23 @@ public class ActivityThongBaoTracNghiem extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityThongBaoTracNghiem.this, ActivityTracnghiem.class);
-                intent.putExtra("De", (Serializable) choiceListd );
+                intent.putExtra("Do_Kho","D");
                 startActivity(intent);
             }
         });
-
         btn_tb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityThongBaoTracNghiem.this, ActivityTracnghiem.class);
-                intent.putExtra("Trung Binh", (Serializable) choiceListtb);
+                intent.putExtra("Do_Kho","TB");
                 startActivity(intent);
             }
         });
-
         btn_kho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityThongBaoTracNghiem.this, ActivityTracnghiem.class);
-                intent.putExtra("Kho", (Serializable) choiceListk);
+                intent.putExtra("Do_Kho","K");
                 startActivity(intent);
             }
         });
