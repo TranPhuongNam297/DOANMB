@@ -45,10 +45,10 @@ public class ActivityTracnghiem extends AppCompatActivity {
         setTitle("Testing");
         FindID();
 
-
+        Intent intent = getIntent();
         DBHelper dbHelper = new DBHelper(ActivityTracnghiem.this);
 
-        choiceList = dbHelper.getMultipleChoice();
+        choiceList = dbHelper.getQuestion(intent.getStringExtra("Do_Kho"));
         choiceSize = choiceList.size();
 
         showNextQuestion();

@@ -23,7 +23,24 @@ public class ActivityThongBaoTracNghiem extends AppCompatActivity {
         btn_de.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityThongBaoTracNghiem.this, ActivityBeforedoQuestion.class);
+                Intent intent = new Intent(ActivityThongBaoTracNghiem.this, ActivityTracnghiem.class);
+                intent.putExtra("Do_Kho","D");
+                startActivity(intent);
+            }
+        });
+        btn_tb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityThongBaoTracNghiem.this, ActivityTracnghiem.class);
+                intent.putExtra("Do_Kho","TB");
+                startActivity(intent);
+            }
+        });
+        btn_kho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityThongBaoTracNghiem.this, ActivityTracnghiem.class);
+                intent.putExtra("Do_Kho","K");
                 startActivity(intent);
             }
         });
