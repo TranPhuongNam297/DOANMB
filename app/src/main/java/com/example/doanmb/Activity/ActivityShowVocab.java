@@ -1,5 +1,6 @@
 package com.example.doanmb.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +35,5 @@ public class ActivityShowVocab extends AppCompatActivity implements VocabAdapter
         recyclerView.setAdapter(vocabAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(ActivityShowVocab.this, LinearLayoutManager.VERTICAL, false));
         recyclerView.addItemDecoration(new DividerItemDecoration(ActivityShowVocab.this, LinearLayoutManager.VERTICAL));
-
     }
 }
