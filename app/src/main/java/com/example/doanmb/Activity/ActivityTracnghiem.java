@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.doanmb.DBHelper;
+import com.example.doanmb.DataBase.DBHelper;
 import com.example.doanmb.MultipleChoice;
 import com.example.doanmb.R;
 
@@ -32,6 +32,8 @@ public class ActivityTracnghiem extends AppCompatActivity {
 
     private int Quesnow = 0;
 
+    private int mucdo, mucdotb, mucdokho;
+
     private CountDownTimer countDownTimer;
 
     public List<MultipleChoice> choiceList;
@@ -45,63 +47,19 @@ public class ActivityTracnghiem extends AppCompatActivity {
         setTitle("Testing");
         FindID();
 
-
-        DBHelper dbHelper = new DBHelper(ActivityTracnghiem.this);
-
-        choiceList = dbHelper.getMultipleChoice();
-        choiceSize = choiceList.size();
-
-        showNextQuestion();
-
-        btnAns1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(btnAns1.getText().toString().equals(currentQues.getDap_An_Dung())){
-                    showNextQuestion();
-                    countTrue++;
-                }else {
-                    showNextQuestion();
-                    countFalse++;
-                }
-            }
-        });
-
-        btnAns2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(btnAns2.getText().toString().equals(currentQues.getDap_An_Dung())){
-                    showNextQuestion();
-                    countTrue++;
-                }else {
-                    showNextQuestion();
-                    countFalse++;
-                }
-            }
-        });
-        btnAns3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(btnAns3.getText().toString().equals(currentQues.getDap_An_Dung())){
-                    showNextQuestion();
-                    countTrue++;
-                }else {
-                    showNextQuestion();
-                    countFalse++;
-                }
-            }
-        });
-        btnAns4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(btnAns4.getText().toString().equals(currentQues.getDap_An_Dung())){
-                    showNextQuestion();
-                    countTrue++;
-                }else {
-                    showNextQuestion();
-                    countFalse++;
-                }
-            }
-        });
+        Intent intent = getIntent();
+        int listde = intent.getIntExtra("DeT", 0);
+        int listtb = intent.getIntExtra("Trung BinhT", 0);
+        int listk = intent.getIntExtra("KhoT", 0);
+        if (listde == 0){
+            solveDe();
+        }
+        if (listtb == 0){
+            solveTrungBinh();
+        }
+        if (listk == 0){
+            solveKho();
+        }
 
     }
 
@@ -172,6 +130,183 @@ public class ActivityTracnghiem extends AppCompatActivity {
         btnAns2 = findViewById(R.id.btnAns2);
         btnAns3 = findViewById(R.id.btnAns3);
         btnAns4 = findViewById(R.id.btnAns4);
+    }
+
+    public void solveDe(){
+        DBHelper dbHelper = new DBHelper(ActivityTracnghiem.this);
+
+        choiceList = dbHelper.getMultipleChoiceDe();
+        choiceSize = 10;
+
+        showNextQuestion();
+
+        btnAns1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnAns1.getText().toString().equals(currentQues.getDap_An_Dung())){
+                    showNextQuestion();
+                    countTrue++;
+                }else {
+                    showNextQuestion();
+                    countFalse++;
+                }
+            }
+        });
+
+        btnAns2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnAns2.getText().toString().equals(currentQues.getDap_An_Dung())){
+                    showNextQuestion();
+                    countTrue++;
+                }else {
+                    showNextQuestion();
+                    countFalse++;
+                }
+            }
+        });
+        btnAns3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnAns3.getText().toString().equals(currentQues.getDap_An_Dung())){
+                    showNextQuestion();
+                    countTrue++;
+                }else {
+                    showNextQuestion();
+                    countFalse++;
+                }
+            }
+        });
+        btnAns4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnAns4.getText().toString().equals(currentQues.getDap_An_Dung())){
+                    showNextQuestion();
+                    countTrue++;
+                }else {
+                    showNextQuestion();
+                    countFalse++;
+                }
+            }
+        });
+    }
+
+    public void solveTrungBinh(){
+        DBHelper dbHelper = new DBHelper(ActivityTracnghiem.this);
+
+        choiceList = dbHelper.getMultipleChoiceTrungBinh();
+        choiceSize = 10;
+
+        showNextQuestion();
+
+        btnAns1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnAns1.getText().toString().equals(currentQues.getDap_An_Dung())){
+                    showNextQuestion();
+                    countTrue++;
+                }else {
+                    showNextQuestion();
+                    countFalse++;
+                }
+            }
+        });
+
+        btnAns2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnAns2.getText().toString().equals(currentQues.getDap_An_Dung())){
+                    showNextQuestion();
+                    countTrue++;
+                }else {
+                    showNextQuestion();
+                    countFalse++;
+                }
+            }
+        });
+        btnAns3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnAns3.getText().toString().equals(currentQues.getDap_An_Dung())){
+                    showNextQuestion();
+                    countTrue++;
+                }else {
+                    showNextQuestion();
+                    countFalse++;
+                }
+            }
+        });
+        btnAns4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnAns4.getText().toString().equals(currentQues.getDap_An_Dung())){
+                    showNextQuestion();
+                    countTrue++;
+                }else {
+                    showNextQuestion();
+                    countFalse++;
+                }
+            }
+        });
+    }
+
+    public void solveKho(){
+        DBHelper dbHelper = new DBHelper(ActivityTracnghiem.this);
+
+        choiceList = dbHelper.getMultipleChoiceKho();
+        choiceSize = 10;
+
+        showNextQuestion();
+
+        btnAns1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnAns1.getText().toString().equals(currentQues.getDap_An_Dung())){
+                    showNextQuestion();
+                    countTrue++;
+                }else {
+                    showNextQuestion();
+                    countFalse++;
+                }
+            }
+        });
+
+        btnAns2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnAns2.getText().toString().equals(currentQues.getDap_An_Dung())){
+                    showNextQuestion();
+                    countTrue++;
+                }else {
+                    showNextQuestion();
+                    countFalse++;
+                }
+            }
+        });
+        btnAns3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnAns3.getText().toString().equals(currentQues.getDap_An_Dung())){
+                    showNextQuestion();
+                    countTrue++;
+                }else {
+                    showNextQuestion();
+                    countFalse++;
+                }
+            }
+        });
+        btnAns4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnAns4.getText().toString().equals(currentQues.getDap_An_Dung())){
+                    showNextQuestion();
+                    countTrue++;
+                }else {
+                    showNextQuestion();
+                    countFalse++;
+                }
+            }
+        });
     }
 }
 

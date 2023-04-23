@@ -1,10 +1,11 @@
-package com.example.doanmb;
+package com.example.doanmb.DataBase;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.example.doanmb.MultipleChoice;
 import com.example.doanmb.Vocab;
 
 import java.io.File;
@@ -67,10 +68,52 @@ public class DBHelper {
         return tmp;
     }
 
-    public ArrayList<MultipleChoice> getMultipleChoice(){
+    public ArrayList<MultipleChoice> getMultipleChoiceTrungBinh(){
         ArrayList<MultipleChoice> tmp = new ArrayList<>();
         db = openDB();
-        String sql = "SELECT * FROM TracNghiem";
+        String sql = "SELECT * FROM TracNghiem Where Muc_DO LIKE 'TB'";
+        Cursor cursor = db.rawQuery(sql, null);
+        while (cursor.moveToNext()) {
+            int id = cursor.getInt(0);
+            String Cau_Hoi = cursor.getString(1);
+            String Dap_An_1 = cursor.getString(2);
+            String Dap_An_2 = cursor.getString(3);
+            String Dap_An_3 = cursor.getString(4);
+            String Dap_An_4 = cursor.getString(5);
+            String Dap_An_Dung = cursor.getString(6);
+            String Muc_Do = cursor.getString(7);
+            MultipleChoice multipleChoice = new MultipleChoice(id, Cau_Hoi, Dap_An_1, Dap_An_2, Dap_An_3, Dap_An_4, Dap_An_Dung, Muc_Do);
+            tmp.add(multipleChoice);
+        }
+        db.close();
+        return tmp;
+    }
+
+    public ArrayList<MultipleChoice> getMultipleChoiceDe(){
+        ArrayList<MultipleChoice> tmp = new ArrayList<>();
+        db = openDB();
+        String sql = "SELECT * FROM TracNghiem Where Muc_DO LIKE 'D' ";
+        Cursor cursor = db.rawQuery(sql, null);
+        while (cursor.moveToNext()) {
+            int id = cursor.getInt(0);
+            String Cau_Hoi = cursor.getString(1);
+            String Dap_An_1 = cursor.getString(2);
+            String Dap_An_2 = cursor.getString(3);
+            String Dap_An_3 = cursor.getString(4);
+            String Dap_An_4 = cursor.getString(5);
+            String Dap_An_Dung = cursor.getString(6);
+            String Muc_Do = cursor.getString(7);
+            MultipleChoice multipleChoice = new MultipleChoice(id, Cau_Hoi, Dap_An_1, Dap_An_2, Dap_An_3, Dap_An_4, Dap_An_Dung, Muc_Do);
+            tmp.add(multipleChoice);
+        }
+        db.close();
+        return tmp;
+    }
+
+    public ArrayList<MultipleChoice> getMultipleChoiceKho(){
+        ArrayList<MultipleChoice> tmp = new ArrayList<>();
+        db = openDB();
+        String sql = "SELECT * FROM TracNghiem Where Muc_DO LIKE 'K'";
         Cursor cursor = db.rawQuery(sql, null);
         while (cursor.moveToNext()) {
             int id = cursor.getInt(0);
