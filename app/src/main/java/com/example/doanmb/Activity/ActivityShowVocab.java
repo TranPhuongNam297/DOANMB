@@ -30,12 +30,13 @@ public class ActivityShowVocab extends AppCompatActivity implements VocabAdapter
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_directory);
+        Intent intent = getIntent();
         dbHelper = new DBHelper(this);
         recyclerView = (RecyclerView) findViewById(R.id.view_rc);
-        vocabs = dbHelper.getVocab();
+        vocabs = dbHelper.getVocab(intent.getStringExtra("chu_de"));
+//        Log.d("MANG NEEEEE", String.valueOf(vocabs));
         vocabAdapter = new VocabAdapter(ActivityShowVocab.this, vocabs, this);
         recyclerView.setAdapter(vocabAdapter);
-
         recyclerView.setLayoutManager(new LinearLayoutManager(ActivityShowVocab.this, LinearLayoutManager.VERTICAL, false));
         recyclerView.addItemDecoration(new DividerItemDecoration(ActivityShowVocab.this, LinearLayoutManager.VERTICAL));
 
