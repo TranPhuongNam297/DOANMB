@@ -49,7 +49,7 @@ public class ActivityTracnghiem extends AppCompatActivity {
         DBHelper dbHelper = new DBHelper(ActivityTracnghiem.this);
 
         choiceList = dbHelper.getQuestion(intent.getStringExtra("Do_Kho"));
-        choiceSize = choiceList.size();
+        choiceSize = 10;
 
         showNextQuestion();
 

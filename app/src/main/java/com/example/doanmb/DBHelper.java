@@ -92,7 +92,7 @@ public class DBHelper {
 //    public ArrayList<MultipleChoice> getMultipleChoice(){
 //        ArrayList<MultipleChoice> tmp = new ArrayList<>();
 //        db = openDB();
-//        String sql = "SELECT * FROM TracNghiem";
+//        String sql = "SELECT * FROM TracNghiem Where Muc_Do Like "";
 //        Cursor cursor = db.rawQuery(sql, null);
 //        while (cursor.moveToNext()) {
 //            int id = cursor.getInt(0);

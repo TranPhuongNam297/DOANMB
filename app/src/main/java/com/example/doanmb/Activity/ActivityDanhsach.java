@@ -51,7 +51,7 @@ public class ActivityDanhsach extends AppCompatActivity {
         btnTracNghiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityDanhsach.this, ActivityThongBaoTracNghiem.class );
+                Intent intent = new Intent(ActivityDanhsach.this, ActivityBeforedoQuestion.class );
                 startActivity(intent);
             }
         });

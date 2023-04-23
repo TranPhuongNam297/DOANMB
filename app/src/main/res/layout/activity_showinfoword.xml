@@ -26,7 +26,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvtittle" />
 
     <TextView
-        android:id="@+id/tvTiengViet"
+        android:id="@+id/tvPhatAm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -34,21 +34,27 @@
         app:layout_constraintTop_toBottomOf="@+id/tvEnglish" />
 
     <TextView
-        android:id="@+id/tvvd"
-        android:layout_width="wrap_content"
+        android:id="@+id/vidu1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/tvTiengViet"
-        app:layout_constraintTop_toBottomOf="@+id/tvTiengViet" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvPhatAm"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhatAm" />
 
     <TextView
-        android:id="@+id/tvvd2"
-        android:layout_width="wrap_content"
+        android:id="@+id/vidu2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/tvvd"
-        app:layout_constraintTop_toBottomOf="@+id/tvvd" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vidu1"
+        app:layout_constraintTop_toBottomOf="@+id/vidu1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

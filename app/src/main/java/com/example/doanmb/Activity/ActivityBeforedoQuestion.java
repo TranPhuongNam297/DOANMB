@@ -19,7 +19,7 @@ public class ActivityBeforedoQuestion extends AppCompatActivity {
         btn_starttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityBeforedoQuestion.this, ActivityTracnghiem.class);
+                Intent intent = new Intent(ActivityBeforedoQuestion.this, ActivityThongBaoTracNghiem.class);
                 startActivity(intent);
             }
         });
