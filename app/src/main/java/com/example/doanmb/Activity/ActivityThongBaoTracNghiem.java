@@ -8,11 +8,20 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.doanmb.DataBase.DBHelper;
+import com.example.doanmb.MultipleChoice;
 import com.example.doanmb.R;
+
+import java.io.Serializable;
+import java.util.List;
 
 public class ActivityThongBaoTracNghiem extends AppCompatActivity {
 
     Button btn_de, btn_tb, btn_kho;
+    public List<MultipleChoice> choiceListd;
+    public List<MultipleChoice> choiceListtb;
+    public List<MultipleChoice> choiceListk;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,10 +29,34 @@ public class ActivityThongBaoTracNghiem extends AppCompatActivity {
         btn_de = findViewById(R.id.btn_dedt);
         btn_tb = findViewById(R.id.btn_trungbinhdt);
         btn_kho = findViewById(R.id.btn_khodt);
+
+        DBHelper dbHelper = new DBHelper(ActivityThongBaoTracNghiem.this);
+        choiceListd = dbHelper.getMultipleChoiceDe();
+        choiceListtb = dbHelper.getMultipleChoiceTrungBinh();
+        choiceListk = dbHelper.getMultipleChoiceKho();
         btn_de.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityThongBaoTracNghiem.this, ActivityBeforedoQuestion.class);
+                Intent intent = new Intent(ActivityThongBaoTracNghiem.this, ActivityTracnghiem.class);
+                intent.putExtra("De", (Serializable) choiceListd );
+                startActivity(intent);
+            }
+        });
+
+        btn_tb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityThongBaoTracNghiem.this, ActivityTracnghiem.class);
+                intent.putExtra("Trung Binh", (Serializable) choiceListtb);
+                startActivity(intent);
+            }
+        });
+
+        btn_kho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityThongBaoTracNghiem.this, ActivityTracnghiem.class);
+                intent.putExtra("Kho", (Serializable) choiceListk);
                 startActivity(intent);
             }
         });
