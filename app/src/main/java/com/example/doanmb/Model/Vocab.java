@@ -1,4 +1,4 @@
-package com.example.doanmb;
+package com.example.doanmb.Model;
 
 import java.io.Serializable;
 

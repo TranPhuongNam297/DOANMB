@@ -2,20 +2,16 @@ package com.example.doanmb.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.doanmb.Adapter.VocabAdapter;
-import com.example.doanmb.DBHelper;
+import com.example.doanmb.DataBase.DBHelper;
 import com.example.doanmb.R;
-import com.example.doanmb.Vocab;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.doanmb.Model.Vocab;
 
 import java.util.ArrayList;
 

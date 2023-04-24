@@ -17,9 +17,9 @@ public class ActivityThongBaoTracNghiem extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tbtracnghiem);
-        btn_de = findViewById(R.id.btn_dedt);
-        btn_tb = findViewById(R.id.btn_trungbinhdt);
-        btn_kho = findViewById(R.id.btn_khodt);
+        btn_de = findViewById(R.id.btn_dedtt);
+        btn_tb = findViewById(R.id.btn_trungbinhdtt);
+        btn_kho = findViewById(R.id.btn_khodtt);
         btn_de.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

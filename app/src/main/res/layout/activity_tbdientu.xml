@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvQuestion" />
 
     <Button
-        android:id="@+id/btn_dedt"
+        android:id="@+id/btn_dedtt"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -53,26 +53,26 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <Button
-        android:id="@+id/btn_trungbinhdt"
+        android:id="@+id/btn_trungbinhdtt"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/bg_button"
         android:textColor="@color/white"
         android:text="Trung bình"
-        app:layout_constraintEnd_toEndOf="@+id/btn_dedt"
-        app:layout_constraintStart_toStartOf="@+id/btn_dedt"
-        app:layout_constraintTop_toBottomOf="@+id/btn_dedt" />
+        app:layout_constraintEnd_toEndOf="@+id/btn_dedtt"
+        app:layout_constraintStart_toStartOf="@+id/btn_dedtt"
+        app:layout_constraintTop_toBottomOf="@+id/btn_dedtt" />
 
     <Button
-        android:id="@+id/btn_khodt"
+        android:id="@+id/btn_khodtt"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/bg_button"
         android:textColor="@color/white"
         android:text="Khó"
-        app:layout_constraintEnd_toEndOf="@+id/btn_trungbinhdt"
-        app:layout_constraintStart_toStartOf="@+id/btn_trungbinhdt"
-        app:layout_constraintTop_toBottomOf="@+id/btn_trungbinhdt" />
+        app:layout_constraintEnd_toEndOf="@+id/btn_trungbinhdtt"
+        app:layout_constraintStart_toStartOf="@+id/btn_trungbinhdtt"
+        app:layout_constraintTop_toBottomOf="@+id/btn_trungbinhdtt" />
 </androidx.constraintlayout.widget.ConstraintLayout>

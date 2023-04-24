@@ -19,7 +19,7 @@ public class ActivityBeforefillBlanks extends AppCompatActivity {
         btn_startdt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityBeforefillBlanks.this, ActivityCheck.class);
+                Intent intent = new Intent(ActivityBeforefillBlanks.this, ActivityThongBaoDienTu.class);
                 startActivity(intent);
             }
         });

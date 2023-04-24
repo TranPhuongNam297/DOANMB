@@ -14,13 +14,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.doanmb.Activity.ActivityShowInfoWord;
-import com.example.doanmb.Activity.ActivityShowVocab;
-import com.example.doanmb.Activity.ActivityVocab;
 import com.example.doanmb.R;
-import com.example.doanmb.Vocab;
+import com.example.doanmb.Model.Vocab;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class VocabAdapter extends RecyclerView.Adapter<VocabAdapter.VocabVH> implements Filterable {
     Context context;

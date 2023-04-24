@@ -11,10 +11,11 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.doanmb.DBHelper;
-import com.example.doanmb.MultipleChoice;
+import com.example.doanmb.DataBase.DBHelper;
+import com.example.doanmb.Model.MultipleChoice;
 import com.example.doanmb.R;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -50,7 +51,7 @@ public class ActivityTracnghiem extends AppCompatActivity {
 
         choiceList = dbHelper.getQuestion(intent.getStringExtra("Do_Kho"));
         choiceSize = 10;
-
+        Collections.shuffle(choiceList);
         showNextQuestion();
 
         btnAns1.setOnClickListener(new View.OnClickListener() {
