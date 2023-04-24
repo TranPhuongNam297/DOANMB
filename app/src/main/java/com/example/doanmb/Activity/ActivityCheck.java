@@ -77,9 +77,11 @@ public class ActivityCheck extends AppCompatActivity{
         } else {
             if (countTrue > countFalse) {
                 Intent intent = new Intent(ActivityCheck.this, ActivityCongra.class);
+                intent.putExtra("Dung", countTrue);
                 startActivity(intent);
             } else if (countTrue < countFalse) {
                 Intent intent = new Intent(ActivityCheck.this, ActivityFail.class);
+                intent.putExtra("Dung1", countTrue);
                 startActivity(intent);
             }
         }
