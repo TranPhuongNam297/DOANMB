@@ -128,10 +128,12 @@ public class ActivityTracnghiem extends AppCompatActivity {
         } else {
             if (countTrue > countFalse){
                 Intent intent = new Intent(ActivityTracnghiem.this, ActivityCongra.class);
+                intent.putExtra("DungTN", countTrue);
                 startActivity(intent);
             }
             if (countTrue < countFalse){
                 Intent intent = new Intent(ActivityTracnghiem.this, ActivityFail.class);
+                intent.putExtra("DungTN1", countTrue);
                 startActivity(intent);
             }
         }

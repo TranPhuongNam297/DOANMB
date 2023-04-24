@@ -26,7 +26,6 @@ public class ActivityCongra extends AppCompatActivity {
         setTextViewColor(textview2, getResources().getColor(R.color.threecl), getResources().getColor(R.color.threecl1), getResources().getColor(R.color.threecl2));
 
         btnBack = findViewById(R.id.btnBack);
-        btnBackAgain = findViewById(R.id.btnBackAgain);
         tvScore = findViewById(R.id.tvScore);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,17 +34,10 @@ public class ActivityCongra extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        btnBackAgain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ActivityCongra.this, ActivityThongBaoTracNghiem.class);
-                startActivity(intent);
-            }
-        });
-
+        int scoretn = getIntent().getExtras().getInt("DungTN");
         int score = getIntent().getExtras().getInt("Dung");
         tvScore.setText(score +"/10");
+        tvScore.setText(scoretn + "/10");
     }
     private void setTextViewColor(TextView textView, int ...color){
         TextPaint paint = textView.getPaint();

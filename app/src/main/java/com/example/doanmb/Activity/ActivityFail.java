@@ -27,22 +27,12 @@ public class ActivityFail extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        btnBackAgain1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ActivityFail.this, ActivityThongBaoDienTu.class);
-                startActivity(intent);
-            }
-        });
-
         int score = getIntent().getExtras().getInt("Dung1");
         tvScore1.setText(score + "/10");
 
     }
     private void FindID(){
         btnBack1 = findViewById(R.id.btnBack1);
-        btnBackAgain1 = findViewById(R.id.btnBackAgain1);
         tvScore1 = findViewById(R.id.tvScore1);
     }
 }
