@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:background="@drawable/bg_button"
-        android:text="Kiểm Tra"
+        android:text="Tiếp theo"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />

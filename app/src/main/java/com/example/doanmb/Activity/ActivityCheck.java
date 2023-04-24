@@ -16,10 +16,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.doanmb.AnswerCheck;
 import com.example.doanmb.DataBase.DBHelper;
 import com.example.doanmb.Model.FillBlanks;
-import com.example.doanmb.QuesCheck;
+
 import com.example.doanmb.R;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -62,6 +61,9 @@ public class ActivityCheck extends AppCompatActivity{
     }
 
     public void showNextQuestion() {
+        if (Counter == Size - 1){
+                btnCheck.setText("Xác Nhận");
+        }
         if (Counter < Size) {
             fillBlanks = fillBlanksList.get(Counter);
             tvQues.setText(fillBlanks.getCau_Hoi());
