@@ -13,6 +13,7 @@
         android:layout_marginTop="16dp"
         android:text="Infoword"
         android:textSize="34sp"
+        android:fontFamily="@font/danging_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,6 +23,7 @@
         android:layout_height="19dp"
         android:layout_marginTop="24dp"
         android:text="TextView"
+        android:fontFamily="@font/dancing_medium"
         app:layout_constraintStart_toStartOf="@+id/tvtittle"
         app:layout_constraintTop_toBottomOf="@+id/tvtittle" />
 
@@ -29,6 +31,8 @@
         android:id="@+id/tvPhatAm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/dancing_medium"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="@+id/tvEnglish"
         app:layout_constraintTop_toBottomOf="@+id/tvEnglish" />
@@ -41,6 +45,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:text="TextView"
+        android:fontFamily="@font/dancing_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tvPhatAm"
         app:layout_constraintTop_toBottomOf="@+id/tvPhatAm" />
@@ -50,9 +55,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="16dp"
+        android:fontFamily="@font/dancing_medium"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/vidu1"
         app:layout_constraintTop_toBottomOf="@+id/vidu1" />
 
