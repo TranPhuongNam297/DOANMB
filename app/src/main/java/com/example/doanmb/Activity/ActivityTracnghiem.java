@@ -50,7 +50,7 @@ public class ActivityTracnghiem extends AppCompatActivity {
         DBHelper dbHelper = new DBHelper(ActivityTracnghiem.this);
 
         choiceList = dbHelper.getQuestion(intent.getStringExtra("Do_Kho"));
-        choiceSize = 10;
+        choiceSize = 2;
         Collections.shuffle(choiceList);
         showNextQuestion();
 
@@ -58,11 +58,11 @@ public class ActivityTracnghiem extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(btnAns1.getText().toString().equals(currentQues.getDap_An_Dung())){
-                    showNextQuestion();
                     countTrue++;
-                }else {
                     showNextQuestion();
+                }else {
                     countFalse++;
+                    showNextQuestion();
                 }
             }
         });
@@ -71,11 +71,11 @@ public class ActivityTracnghiem extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(btnAns2.getText().toString().equals(currentQues.getDap_An_Dung())){
-                    showNextQuestion();
                     countTrue++;
-                }else {
                     showNextQuestion();
+                }else {
                     countFalse++;
+                    showNextQuestion();
                 }
             }
         });
@@ -83,11 +83,11 @@ public class ActivityTracnghiem extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(btnAns3.getText().toString().equals(currentQues.getDap_An_Dung())){
-                    showNextQuestion();
                     countTrue++;
-                }else {
                     showNextQuestion();
+                }else {
                     countFalse++;
+                    showNextQuestion();
                 }
             }
         });
@@ -95,11 +95,11 @@ public class ActivityTracnghiem extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(btnAns4.getText().toString().equals(currentQues.getDap_An_Dung())){
-                    showNextQuestion();
                     countTrue++;
-                }else {
                     showNextQuestion();
+                }else {
                     countFalse++;
+                    showNextQuestion();
                 }
             }
         });
@@ -128,12 +128,14 @@ public class ActivityTracnghiem extends AppCompatActivity {
         } else {
             if (countTrue > countFalse){
                 Intent intent = new Intent(ActivityTracnghiem.this, ActivityCongra.class);
-                intent.putExtra("DungTN", countTrue);
+                intent.putExtra("DungTN",countTrue);
+                intent.putExtra("flag2", 1);
                 startActivity(intent);
             }
             if (countTrue < countFalse){
                 Intent intent = new Intent(ActivityTracnghiem.this, ActivityFail.class);
                 intent.putExtra("DungTN1", countTrue);
+                intent.putExtra("flag", 1);
                 startActivity(intent);
             }
         }
