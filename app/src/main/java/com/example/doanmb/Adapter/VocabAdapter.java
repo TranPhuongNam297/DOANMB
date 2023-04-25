@@ -85,5 +85,6 @@ public class VocabAdapter extends RecyclerView.Adapter<VocabAdapter.VocabVH> imp
 
     public interface Listener{
 
+        void OnItemListener(int pos, Vocab contact);
     }
 }

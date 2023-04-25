@@ -106,5 +106,29 @@ public class DBHelper {
         db.close();
         return tmp;
     }
+    public ArrayList<Vocab> search(String query){
+        ArrayList<Vocab> tmp = new ArrayList<>();
+        db = openDB();
+        String sql = "SELECT * FROM Contact WHERE FNAME LIKE '%" + query + "%' " +
+                "UNION " +
+                "SELECT * FROM Contact WHERE LNAME LIKE '%" + query + "%' ";
+        Cursor cursor = db.rawQuery(sql, null);
+        while (cursor.moveToNext()){
+            int id = cursor.getInt(0);
+            String English = cursor.getString(1);
+            String Tieng_Viet = cursor.getString(2);
+            String Phat_Am = cursor.getString(3);
+            String Chu_De = cursor.getString(4);
+            String Vi_Du = cursor.getString(5);
+            String Vi_Du2 = cursor.getString(6);
+            Vocab vocab = new Vocab(id, English, Tieng_Viet, Phat_Am, Chu_De, Vi_Du, Vi_Du2);
+            tmp.add(vocab);
+        }
+
+        db.close();
+
+
+        return tmp;
+    }
 
 }
