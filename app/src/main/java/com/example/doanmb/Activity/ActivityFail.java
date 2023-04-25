@@ -28,7 +28,16 @@ public class ActivityFail extends AppCompatActivity {
             }
         });
         int score = getIntent().getExtras().getInt("Dung1");
-        tvScore1.setText(score + "/10");
+        int score1 = getIntent().getExtras().getInt("DungTN1");
+        Intent intent = getIntent();
+        int flag = intent.getIntExtra("flag", 0);
+        if (flag == 1){
+            tvScore1.setText(score + "/10");
+        }else {
+            tvScore1.setText(score1 + "/10");
+        }
+
+
 
     }
     private void FindID(){

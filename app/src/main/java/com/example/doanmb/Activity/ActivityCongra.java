@@ -36,8 +36,15 @@ public class ActivityCongra extends AppCompatActivity {
         });
         int scoretn = getIntent().getExtras().getInt("DungTN");
         int score = getIntent().getExtras().getInt("Dung");
-        tvScore.setText(score +"/10");
-        tvScore.setText(scoretn + "/10");
+        Intent intent = getIntent();
+        int flag = intent.getIntExtra("flag2", 0);
+        if (flag == 1){
+            tvScore.setText(score +"/10");
+        }else {
+            tvScore.setText(scoretn +"/10");
+        }
+
+
     }
     private void setTextViewColor(TextView textView, int ...color){
         TextPaint paint = textView.getPaint();
