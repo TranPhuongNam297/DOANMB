@@ -12,6 +12,9 @@
         android:theme="@style/Theme.DoAnMB"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityOptionVocab"
+            android:exported="false" />
+        <activity
             android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>
@@ -20,19 +23,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.doanmb.Activity.ActivityDanhsach" />
-        <activity android:name="com.example.doanmb.Activity.ActivityTracnghiem" />
-        <activity android:name="com.example.doanmb.Activity.ActivityCongra" />
-        <activity android:name="com.example.doanmb.Activity.ActivityCheck" />
-        <activity android:name="com.example.doanmb.Activity.ActivityVocab" />
-        <activity android:name="com.example.doanmb.Activity.ActivityThongBaoTracNghiem" />
-        <activity android:name="com.example.doanmb.Activity.ActivityBeforedoQuestion" />
-        <activity android:name="com.example.doanmb.Activity.ActivityThongBaoDienTu" />
-        <activity android:name="com.example.doanmb.Activity.ActivityBeforefillBlanks" />
-        <activity android:name="com.example.doanmb.Activity.ActivityShowVocab" />
-        <activity android:name="com.example.doanmb.Activity.ActivityFail" />
-        <activity android:name="com.example.doanmb.Activity.ActivityShowInfoWord" />
-
+        <activity android:name=".Activity.ActivityDanhsach" />
+        <activity android:name=".Activity.ActivityTracnghiem" />
+        <activity android:name=".Activity.ActivityCongra" />
+        <activity android:name=".Activity.ActivityCheck" />
+        <activity android:name=".Activity.ActivityVocab" />
+        <activity android:name=".Activity.ActivityThongBaoTracNghiem" />
+        <activity android:name=".Activity.ActivityBeforedoQuestion" />
+        <activity android:name=".Activity.ActivityThongBaoDienTu" />
+        <activity android:name=".Activity.ActivityBeforefillBlanks" />
+        <activity android:name=".Activity.ActivityShowVocab" />
+        <activity android:name=".Activity.ActivityFail" />
+        <activity android:name=".Activity.ActivityShowInfoWord" />
+        <activity android:name=".Activity.ActivityOptionVocab"></activity>
+        <activity android:name=".Activity.ActivityVocab"/>
+        <activity android:name=".Activity.ActivityNote"/>
     </application>
 
 </manifest>
