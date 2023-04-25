@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/linear_gradient_text_color">
 
     <TextView
         android:id="@+id/tvtittle"
@@ -11,19 +12,20 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Infoword"
-        android:textSize="34sp"
         android:fontFamily="@font/danging_bold"
+        android:text="Infoword"
+        android:textSize="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvEnglish"
         android:layout_width="wrap_content"
-        android:layout_height="19dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="TextView"
         android:fontFamily="@font/dancing_medium"
+        android:text="TextView"
+        android:textSize="34sp"
         app:layout_constraintStart_toStartOf="@+id/tvtittle"
         app:layout_constraintTop_toBottomOf="@+id/tvtittle" />
 
@@ -34,6 +36,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/dancing_medium"
         android:text="TextView"
+        android:textSize="34sp"
         app:layout_constraintStart_toStartOf="@+id/tvEnglish"
         app:layout_constraintTop_toBottomOf="@+id/tvEnglish" />
 
@@ -44,8 +47,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:text="TextView"
         android:fontFamily="@font/dancing_medium"
+        android:text="TextView"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tvPhatAm"
         app:layout_constraintTop_toBottomOf="@+id/tvPhatAm" />
@@ -59,6 +63,7 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/dancing_medium"
         android:text="TextView"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/vidu1"

@@ -50,7 +50,7 @@ public class ActivityTracnghiem extends AppCompatActivity {
         DBHelper dbHelper = new DBHelper(ActivityTracnghiem.this);
 
         choiceList = dbHelper.getQuestion(intent.getStringExtra("Do_Kho"));
-        choiceSize = 2;
+        choiceSize = 10;
         Collections.shuffle(choiceList);
         showNextQuestion();
 
@@ -128,13 +128,13 @@ public class ActivityTracnghiem extends AppCompatActivity {
         } else {
             if (countTrue > countFalse){
                 Intent intent = new Intent(ActivityTracnghiem.this, ActivityCongra.class);
-                intent.putExtra("DungTN",countTrue);
-                intent.putExtra("flag2", 1);
+                intent.putExtra("Diem",countTrue);
+                intent.putExtra("flag", 1);
                 startActivity(intent);
             }
             if (countTrue < countFalse){
                 Intent intent = new Intent(ActivityTracnghiem.this, ActivityFail.class);
-                intent.putExtra("DungTN1", countTrue);
+                intent.putExtra("Diem", countTrue);
                 intent.putExtra("flag", 1);
                 startActivity(intent);
             }

@@ -34,15 +34,12 @@ public class ActivityCongra extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        int scoretn = getIntent().getExtras().getInt("DungTN");
-        int score = getIntent().getExtras().getInt("Dung");
+        int scoretn = getIntent().getExtras().getInt("Diem");
+        int score = getIntent().getExtras().getInt("Diem");
         Intent intent = getIntent();
         int flag = intent.getIntExtra("flag2", 0);
-        if (flag == 1){
-            tvScore.setText(score +"/10");
-        }else {
-            tvScore.setText(scoretn +"/10");
-        }
+        tvScore.setText(score +"/10");
+
 
 
     }

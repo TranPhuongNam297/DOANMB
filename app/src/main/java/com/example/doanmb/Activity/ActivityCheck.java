@@ -50,11 +50,13 @@ public class ActivityCheck extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 if (edCheck.getText().toString().trim().equalsIgnoreCase(fillBlanks.getDap_An().trim())){
-                    showNextQuestion();
                     countTrue++;
-                } else {
                     showNextQuestion();
+
+                } else {
                     countFalse++;
+                    showNextQuestion();
+
                 }
             }
         });
@@ -79,11 +81,11 @@ public class ActivityCheck extends AppCompatActivity{
         } else {
             if (countTrue > countFalse) {
                 Intent intent = new Intent(ActivityCheck.this, ActivityCongra.class);
-                intent.putExtra("Dung", countTrue);
+                intent.putExtra("Diem", countTrue);
                 startActivity(intent);
             } else if (countTrue < countFalse) {
                 Intent intent = new Intent(ActivityCheck.this, ActivityFail.class);
-                intent.putExtra("Dung1", countTrue);
+                intent.putExtra("Diem", countTrue);
                 startActivity(intent);
             }
         }

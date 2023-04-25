@@ -27,15 +27,10 @@ public class ActivityFail extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        int score = getIntent().getExtras().getInt("Dung1");
-        int score1 = getIntent().getExtras().getInt("DungTN1");
         Intent intent = getIntent();
-        int flag = intent.getIntExtra("flag", 0);
-        if (flag == 1){
-            tvScore1.setText(score + "/10");
-        }else {
-            tvScore1.setText(score1 + "/10");
-        }
+        int score = getIntent().getExtras().getInt("Diem");
+        tvScore1.setText(score + "/10");
+
 
 
 
