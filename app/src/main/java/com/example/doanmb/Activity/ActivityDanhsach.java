@@ -38,7 +38,7 @@ public class ActivityDanhsach extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btnVocab = findViewById(R.id.btnTuDien);
+        btnVocab = findViewById(R.id.btnLogout);
         btnVocab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +46,7 @@ public class ActivityDanhsach extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btnTracNghiem = findViewById(R.id.btnTracNghiem);
+        btnTracNghiem = findViewById(R.id.btnAdd);
         btnKiemTra = findViewById(R.id.btnKiemTra);
         btnTracNghiem.setOnClickListener(new View.OnClickListener() {
             @Override

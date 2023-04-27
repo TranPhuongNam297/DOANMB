@@ -2,8 +2,6 @@ package com.example.doanmb.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,9 +31,8 @@ public class ActivityShowVocab extends AppCompatActivity implements VocabAdapter
         ed_search = findViewById(R.id.ed_search);
         Intent intent = getIntent();
         dbHelper = new DBHelper(this);
-        recyclerView = (RecyclerView) findViewById(R.id.view_rc);
+        recyclerView = findViewById(R.id.view_rc);
         vocabs = dbHelper.getVocab(intent.getStringExtra("chu_de"));
-//        Log.d("MANG NEEEEE", String.valueOf(vocabs));
         vocabAdapter = new VocabAdapter(ActivityShowVocab.this, vocabs, this);
         recyclerView.setAdapter(vocabAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(ActivityShowVocab.this, LinearLayoutManager.VERTICAL, false));
@@ -44,7 +41,7 @@ public class ActivityShowVocab extends AppCompatActivity implements VocabAdapter
         ed_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(ActivityShowVocab.this,SearchActivity.class);
+                Intent intent =new Intent(ActivityShowVocab.this, ActivitySearch.class);
                 startActivity(intent);
             }
         });

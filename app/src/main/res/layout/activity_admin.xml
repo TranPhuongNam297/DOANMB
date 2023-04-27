@@ -59,20 +59,20 @@
 
                 <ImageView
                     android:id="@+id/imageView12"
-                    android:layout_width="150dp"
+                    android:layout_width="100dp"
                     android:layout_height="150dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/tracnghiem" />
+                    app:srcCompat="@drawable/add" />
 
                 <Button
                     android:id="@+id/btnAdd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_button"
+                    android:text="Thêm "
                     android:textColor="@color/white"
-                    android:text="Cùng làm bài nào!!!"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView12" />
@@ -92,20 +92,20 @@
 
                 <ImageView
                     android:id="@+id/imageView13"
-                    android:layout_width="150dp"
+                    android:layout_width="100dp"
                     android:layout_height="150dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/vocab" />
+                    app:srcCompat="@drawable/delete" />
 
                 <Button
-                    android:id="@+id/btnKiemTra"
+                    android:id="@+id/button4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:text="Kiểm tra từ vựng"
                     android:background="@drawable/bg_button"
+                    android:text="xóa"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView13" />
@@ -130,19 +130,19 @@
 
                 <ImageView
                     android:id="@+id/imageView14"
-                    android:layout_width="150dp"
+                    android:layout_width="100dp"
                     android:layout_height="150dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/youtube" />
+                    app:srcCompat="@drawable/repair" />
 
                 <Button
                     android:id="@+id/btnYoutube"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:text="Học với YouTube"
+                    android:text="Repair"
                     android:background="@drawable/bg_button"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -163,20 +163,20 @@
 
                 <ImageView
                     android:id="@+id/imageView10"
-                    android:layout_width="150dp"
+                    android:layout_width="100dp"
                     android:layout_height="150dp"
                     android:layout_marginTop="4dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/dic" />
+                    app:srcCompat="@drawable/logout" />
 
                 <Button
                     android:id="@+id/btnLogout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:text="Tra từ điển"
+                    android:text="Logout"
                     android:background="@drawable/bg_button"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

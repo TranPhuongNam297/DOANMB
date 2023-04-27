@@ -38,6 +38,11 @@
         <activity android:name=".Activity.ActivityOptionVocab"></activity>
         <activity android:name=".Activity.ActivityVocab"/>
         <activity android:name=".Activity.ActivityNote"/>
+        <activity android:name="com.example.doanmb.Activity.ActivityLogin" />
+        <activity android:name="com.example.doanmb.Activity.ActivityAdmin" />
+        <activity android:name="com.example.doanmb.Activity.ActivityAddEdit" />
+        <activity android:name="com.example.doanmb.Activity.ActivityAddList" />
+        <activity android:name="com.example.doanmb.Activity.ActivityAddChuDe" />
     </application>
 
 </manifest>

@@ -24,6 +24,10 @@ public class Vocab implements Serializable {
         Vi_DUU2 = Vi_Du2;
     }
 
+    public Vocab(String Chu_De1){
+        Chu_De = Chu_De1;
+    }
+
     public Vocab() {
     }
 

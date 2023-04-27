@@ -19,7 +19,7 @@ import com.example.doanmb.R;
 
 import java.util.ArrayList;
 
-public class SearchActivity extends AppCompatActivity implements VocabAdapter.Listener {
+public class ActivitySearch extends AppCompatActivity implements VocabAdapter.Listener {
     DBHelper dbHelper;
     ArrayList<Vocab> vocabs;
     VocabAdapter vocabAdapter;
@@ -87,7 +87,7 @@ public class SearchActivity extends AppCompatActivity implements VocabAdapter.Li
 
     @Override
     public void OnItemListener(int pos, Vocab contact) {
-        Intent intent = new Intent(SearchActivity.this, ActivityShowInfoWord.class);
+        Intent intent = new Intent(ActivitySearch.this, ActivityShowInfoWord.class);
         intent.putExtra("idContact", contact.getId());
         startActivity(intent);
     }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_Englishvc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Tiếng Anh: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_tieng_vietvc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Tiếng Việt"
+        app:layout_constraintStart_toStartOf="@+id/tv_Englishvc"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Englishvc" />
+
+    <TextView
+        android:id="@+id/tv_PhatAmvc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Phát Âm:"
+        app:layout_constraintStart_toStartOf="@+id/tv_tieng_vietvc"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tieng_vietvc" />
+
+    <TextView
+        android:id="@+id/tv_chudevc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Chủ đề"
+        app:layout_constraintStart_toStartOf="@+id/tv_PhatAmvc"
+        app:layout_constraintTop_toBottomOf="@+id/tv_PhatAmvc" />
+
+    <TextView
+        android:id="@+id/tv_viduvc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Ví dụ:"
+        app:layout_constraintStart_toStartOf="@+id/tv_chudevc"
+        app:layout_constraintTop_toBottomOf="@+id/tv_chudevc" />
+
+    <TextView
+        android:id="@+id/tv_vidu2vc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Ví dụ 2: "
+        app:layout_constraintStart_toStartOf="@+id/tv_viduvc"
+        app:layout_constraintTop_toBottomOf="@+id/tv_viduvc" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
