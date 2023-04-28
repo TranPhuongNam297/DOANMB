@@ -181,4 +181,18 @@ public class DBHelper {
         db.close();
         return tmp;
     }
+
+    public ArrayList<MultipleChoice> getMucDo() {
+        ArrayList<MultipleChoice> tmp = new ArrayList<>();
+        db = openDB();
+        String sql = "SELECT DISTINCT Muc_Do FROM TracNghiem ";
+        Cursor cursor = db.rawQuery(sql, null);
+        while (cursor.moveToNext()) {
+            String Muc_Do = cursor.getString(0);
+            MultipleChoice multipleChoice = new MultipleChoice(Muc_Do);
+            tmp.add(multipleChoice);
+        }
+        db.close();
+        return tmp;
+    }
 }

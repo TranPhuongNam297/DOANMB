@@ -68,10 +68,10 @@
 
                 <Button
                     android:id="@+id/btnAdd"
-                    android:layout_width="wrap_content"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_button"
-                    android:text="Thêm "
+                    android:text="Thêm Từ Điển"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -100,11 +100,11 @@
                     app:srcCompat="@drawable/delete" />
 
                 <Button
-                    android:id="@+id/button4"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/btn_addtn"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_button"
-                    android:text="xóa"
+                    android:text="Thêm Trắc Nghiệm"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -139,11 +139,11 @@
 
                 <Button
                     android:id="@+id/btnYoutube"
-                    android:layout_width="wrap_content"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:text="Repair"
                     android:background="@drawable/bg_button"
+                    android:text="Thêm điền từ"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView14" />
@@ -165,7 +165,6 @@
                     android:id="@+id/imageView10"
                     android:layout_width="100dp"
                     android:layout_height="150dp"
-                    android:layout_marginTop="4dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -173,11 +172,11 @@
 
                 <Button
                     android:id="@+id/btnLogout"
-                    android:layout_width="wrap_content"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:text="Logout"
                     android:background="@drawable/bg_button"
+                    android:text="Logout"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView10" />

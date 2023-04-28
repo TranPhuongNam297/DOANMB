@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.doanmb.R;
 
 public class ActivityAdmin extends AppCompatActivity {
-    Button btnAdd, btnLogOut;
+    Button btnAdd, btnLogOut, btnaddtn;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,10 +26,18 @@ public class ActivityAdmin extends AppCompatActivity {
         setTextViewColor(textview2, getResources().getColor(R.color.threecl), getResources().getColor(R.color.threecl1), getResources().getColor(R.color.threecl2));
         btnAdd = findViewById(R.id.btnAdd);
         btnLogOut = findViewById(R.id.btnLogout);
+        btnaddtn = findViewById(R.id.btn_addtn);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityAdmin.this, ActivityAddChuDe.class);
+                startActivity(intent);
+            }
+        });
+        btnaddtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityAdmin.this, ActivityAddMucDoTracNghiem.class);
                 startActivity(intent);
             }
         });

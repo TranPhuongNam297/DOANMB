@@ -23,6 +23,10 @@ public class MultipleChoice implements Serializable {
         Muc_Do = muc_Do;
     }
 
+    public MultipleChoice(String muc_Do){
+        Muc_Do = muc_Do;
+    }
+
     public int getId() {
         return id;
     }

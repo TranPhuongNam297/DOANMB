@@ -43,6 +43,8 @@
         <activity android:name="com.example.doanmb.Activity.ActivityAddEdit" />
         <activity android:name="com.example.doanmb.Activity.ActivityAddList" />
         <activity android:name="com.example.doanmb.Activity.ActivityAddChuDe" />
+        <activity android:name="com.example.doanmb.Activity.ActivityAddMucDoTracNghiem" />
+        <activity android:name="com.example.doanmb.Activity.ActivityAddListTN" />
     </application>
 
 </manifest>
