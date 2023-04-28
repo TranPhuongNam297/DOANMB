@@ -138,7 +138,7 @@
                     app:srcCompat="@drawable/repair" />
 
                 <Button
-                    android:id="@+id/btnYoutube"
+                    android:id="@+id/btn_addDT"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_button"

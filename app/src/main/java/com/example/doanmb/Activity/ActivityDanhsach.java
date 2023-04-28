@@ -30,7 +30,7 @@ public class ActivityDanhsach extends AppCompatActivity {
 
         TextView textview2 = findViewById(R.id.textView4);
         setTextViewColor(textview2, getResources().getColor(R.color.threecl), getResources().getColor(R.color.threecl1), getResources().getColor(R.color.threecl2));
-        btnYoutube = findViewById(R.id.btnYoutube);
+        btnYoutube = findViewById(R.id.btn_addDT);
         btnYoutube.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

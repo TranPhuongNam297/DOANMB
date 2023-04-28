@@ -14,8 +14,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.doanmb.Activity.ActivityAddChuDe;
 import com.example.doanmb.Activity.ActivityAddEdit;
 import com.example.doanmb.Activity.ActivityAddList;
 import com.example.doanmb.Activity.ActivityShowInfoWord;

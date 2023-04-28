@@ -13,6 +13,10 @@ public class FillBlanks {
         Muc_Do = muc_Do;
     }
 
+    public FillBlanks(String muc_Do){
+        Muc_Do = muc_Do;
+    }
+
     public int getId() {
         return Id;
     }

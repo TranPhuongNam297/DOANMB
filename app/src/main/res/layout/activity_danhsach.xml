@@ -138,7 +138,7 @@
                     app:srcCompat="@drawable/youtube" />
 
                 <Button
-                    android:id="@+id/btnYoutube"
+                    android:id="@+id/btn_addDT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"

@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.doanmb.R;
 
 public class ActivityAdmin extends AppCompatActivity {
-    Button btnAdd, btnLogOut, btnaddtn;
+    Button btnAdd, btnLogOut, btnaddtn, btnadddt;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +27,7 @@ public class ActivityAdmin extends AppCompatActivity {
         btnAdd = findViewById(R.id.btnAdd);
         btnLogOut = findViewById(R.id.btnLogout);
         btnaddtn = findViewById(R.id.btn_addtn);
+        btnadddt = findViewById(R.id.btn_addDT);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +42,16 @@ public class ActivityAdmin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnadddt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityAdmin.this, ActivityAddMucDoDienTu.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         btnLogOut.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,8 +1,6 @@
 package com.example.doanmb.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.doanmb.Activity.ActivityShowInfoWord;
 import com.example.doanmb.Model.MultipleChoice;
 import com.example.doanmb.R;
 import com.example.doanmb.Model.Vocab;
@@ -71,9 +68,9 @@ public class AddTNAdapter extends RecyclerView.Adapter<AddTNAdapter.MultipleChoi
         TextView tv_Cau_HoiTN, tv_Dap_An_1, tv_Dap_An_2, tv_Dap_An_3, tv_Dap_An_4, tv_Dap_An_Dung_TN, tv_Muc_Do_TN;
         public MultipleChoiceVH(@NonNull View itemView) {
             super(itemView);
-            tv_Cau_HoiTN = itemView.findViewById(R.id.tv_Cau_HoiTN);
-            tv_Dap_An_1 = itemView.findViewById(R.id.tv_Dap_An_1);
-            tv_Dap_An_2 = itemView.findViewById(R.id.tv_Dap_An_2);
+            tv_Cau_HoiTN = itemView.findViewById(R.id.tv_Cau_Hoi_DT);
+            tv_Dap_An_1 = itemView.findViewById(R.id.tv_Dap_An_DT);
+            tv_Dap_An_2 = itemView.findViewById(R.id.tv_Muc_Do_DT);
             tv_Dap_An_3 = itemView.findViewById(R.id.tv_Dap_An_3);
             tv_Dap_An_4 = itemView.findViewById(R.id.tv_Dap_An_4);
             tv_Dap_An_Dung_TN = itemView.findViewById(R.id.tv_Dap_An_Dung_TN);

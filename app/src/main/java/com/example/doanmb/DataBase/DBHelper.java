@@ -195,4 +195,18 @@ public class DBHelper {
         db.close();
         return tmp;
     }
+
+    public ArrayList<FillBlanks> getMucDoDT() {
+        ArrayList<FillBlanks> tmp = new ArrayList<>();
+        db = openDB();
+        String sql = "SELECT DISTINCT Muc_Do FROM DienTu ";
+        Cursor cursor = db.rawQuery(sql, null);
+        while (cursor.moveToNext()) {
+            String Muc_Do = cursor.getString(0);
+            FillBlanks fillBlanks = new FillBlanks(Muc_Do);
+            tmp.add(fillBlanks);
+        }
+        db.close();
+        return tmp;
+    }
 }
