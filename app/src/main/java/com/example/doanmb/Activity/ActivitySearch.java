@@ -12,7 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.doanmb.Adapter.VocabAdapter;
+import com.example.doanmb.Activity.User.Vocab.ActivityShowInfoWord;
+import com.example.doanmb.Adapter.Vocab.VocabAdapter;
 import com.example.doanmb.DataBase.DBHelper;
 import com.example.doanmb.Model.Vocab;
 import com.example.doanmb.R;

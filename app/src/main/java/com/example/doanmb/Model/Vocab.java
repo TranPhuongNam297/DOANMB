@@ -23,6 +23,14 @@ public class Vocab implements Serializable {
         Vi_DU1 = Vi_Du;
         Vi_DUU2 = Vi_Du2;
     }
+    public Vocab( String english, String tieng_Viet, String phat_Am, String Chu_de, String Vi_Du, String Vi_Du2) {
+        English = english;
+        Tieng_Viet = tieng_Viet;
+        Phat_Am = phat_Am;
+        Chu_De = Chu_de;
+        Vi_DU1 = Vi_Du;
+        Vi_DUU2 = Vi_Du2;
+    }
 
     public Vocab(String Chu_De1){
         Chu_De = Chu_De1;

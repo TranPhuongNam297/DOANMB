@@ -135,10 +135,10 @@ public class DBHelper {
     public long insert(Vocab vocab){
         db = openDB();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("ID", vocab.getId());
         contentValues.put("English", vocab.getEnglish());
         contentValues.put("Tieng_Viet", vocab.getTieng_Viet());
         contentValues.put("Phat_Am", vocab.getPhat_Am());
+        contentValues.put("Chu_De",vocab.getChu_De());
         contentValues.put("Vi_Du", vocab.getVi_Du());
         contentValues.put("Vi_Du2", vocab.getVi_Du2());
         long tmp = db.insert("Vocab", "", contentValues);
@@ -146,26 +146,27 @@ public class DBHelper {
         return tmp;
     }
 
-//    public long update(Contact contact){
-//        db = openDB();
-//        ContentValues contentValues = new ContentValues();
-//        contentValues.put("FNAME", contact.getFname());
-//        contentValues.put("LNAME", contact.getLname());
-//        contentValues.put("PHONE", contact.getPhone());
-//        contentValues.put("EMAIL", contact.getMail());
-//        contentValues.put("IMAGE", contact.getImage());
-//        contentValues.put("BIRTHDAY", contact.getBirthDay());
-//        long tmp = db.update("Contact", contentValues, "ID="+ contact.getId(), null);
-//        db.close();
-//        return tmp;
-//    }
+    public long update(Vocab vocab){
+        db = openDB();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("English", vocab.getEnglish());
+        contentValues.put("Tieng_Viet", vocab.getTieng_Viet());
+        contentValues.put("Phat_Am", vocab.getPhat_Am());
+        contentValues.put("Chu_De", vocab.getChu_De());
+        contentValues.put("Vi_Du", vocab.getVi_Du());
+        contentValues.put("Vi_Du2", vocab.getVi_Du2());
+
+        long tmp = db.update("Vocab", contentValues, "ID="+ vocab.getId(), null);
+        db.close();
+        return tmp;
+    }
 //
-//    public long delete(Contact contact){
-//        db = openDB();
-//        long tmp = db.delete("Contact", "ID="+ contact.getId(), null);
-//        db.close();
-//        return tmp;
-//    }
+    public long delete(Vocab vocab){
+        db = openDB();
+        long tmp = db.delete("Vocab", "ID="+ vocab.getId(), null);
+        db.close();
+        return tmp;
+    }
 
     public ArrayList<Vocab> getChuDe() {
         ArrayList<Vocab> tmp = new ArrayList<>();
@@ -209,4 +210,14 @@ public class DBHelper {
         db.close();
         return tmp;
     }
+    public long AddChuDe(String ChuDe){
+        db = openDB();
+        ContentValues values = new ContentValues();
+        values.put("Chu_De", ChuDe);
+        long result = db.insert("Vocab", null, values);
+        db.close();
+        return result;
+    }
+
+
 }
