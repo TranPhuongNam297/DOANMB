@@ -23,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Câu Hỏi"
+            android:inputType="text"
             android:textColorHint="#00BCD4" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -42,6 +43,7 @@
             android:id="@+id/Add_Da1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:hint="Đáp án A" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -61,6 +63,7 @@
             android:id="@+id/Add_Da2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:hint="Đáp Án B" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,6 +83,7 @@
             android:id="@+id/Add_Da3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:hint="Đáp Án C" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,6 +103,7 @@
             android:id="@+id/Add_Da4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:hint="Đáp Án D" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -118,6 +123,7 @@
             android:id="@+id/Add_Da"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:hint="Đáp Án đúng" />
     </com.google.android.material.textfield.TextInputLayout>
 

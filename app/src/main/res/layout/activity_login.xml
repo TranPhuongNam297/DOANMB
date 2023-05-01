@@ -68,35 +68,12 @@
         android:id="@+id/btnDangKy"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="93dp"
         android:background="@drawable/button_bg"
         android:text="Đăng nhập"
         app:layout_constraintEnd_toEndOf="@+id/etPassWord"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/etPassWord"
-        app:layout_constraintTop_toBottomOf="@+id/tvChangePass" />
-
-    <Button
-        android:id="@+id/btnDangNhap"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/button_bg"
-        android:text="Đăng ký"
-        app:layout_constraintEnd_toEndOf="@+id/btnDangKy"
-        app:layout_constraintStart_toStartOf="@+id/btnDangKy"
-        app:layout_constraintTop_toBottomOf="@+id/btnDangKy" />
-
-    <TextView
-        android:id="@+id/tvChangePass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Quên mật khẩu?"
-        android:textColor="#000000"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPassWord" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
