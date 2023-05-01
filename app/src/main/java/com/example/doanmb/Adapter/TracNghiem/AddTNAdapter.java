@@ -1,16 +1,21 @@
 package com.example.doanmb.Adapter.TracNghiem;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.doanmb.Activity.Admin.ActivityAdmin;
+import com.example.doanmb.Activity.Admin.TracNghiem.ActivityFormTN;
 import com.example.doanmb.Model.MultipleChoice;
 import com.example.doanmb.R;
 import com.example.doanmb.Model.Vocab;
@@ -53,6 +58,30 @@ public class AddTNAdapter extends RecyclerView.Adapter<AddTNAdapter.MultipleChoi
         holder.tv_Dap_An_4.setText(multipleChoice.getDap_An_4());
         holder.tv_Dap_An_Dung_TN.setText(multipleChoice.getDap_An_Dung());
         holder.tv_Muc_Do_TN.setText(multipleChoice.getMuc_Do());
+        holder.btn_Edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ActivityFormTN.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("ID",multipleChoice.getId());
+                bundle.putString("Cau_Hoi",multipleChoice.getCau_Hoi());
+                bundle.putString("Dap_An_1",multipleChoice.getDap_An_1());
+                bundle.putString("Dap_An_2",multipleChoice.getDap_An_2());
+                bundle.putString("Dap_An_3",multipleChoice.getDap_An_3());
+                bundle.putString("Dap_An_4",multipleChoice.getDap_An_4());
+                bundle.putString("Dap_An_Dung",multipleChoice.getDap_An_Dung());
+                bundle.putString("Muc_Do",multipleChoice.getMuc_Do());
+                intent.putExtras(bundle);
+                context.startActivity(intent);
+            }
+        });
+        holder.btn_del.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    listener.OnDeleteListener(multipleChoice);
+            }
+        });
+
     }
 
 
@@ -66,6 +95,7 @@ public class AddTNAdapter extends RecyclerView.Adapter<AddTNAdapter.MultipleChoi
 
     public class MultipleChoiceVH extends RecyclerView.ViewHolder{
         TextView tv_Cau_HoiTN, tv_Dap_An_1, tv_Dap_An_2, tv_Dap_An_3, tv_Dap_An_4, tv_Dap_An_Dung_TN, tv_Muc_Do_TN;
+        ImageView btn_del,btn_Edit;
         public MultipleChoiceVH(@NonNull View itemView) {
             super(itemView);
             tv_Cau_HoiTN = itemView.findViewById(R.id.tv_Cau_Hoi_DT);
@@ -75,11 +105,15 @@ public class AddTNAdapter extends RecyclerView.Adapter<AddTNAdapter.MultipleChoi
             tv_Dap_An_4 = itemView.findViewById(R.id.tv_Dap_An_4);
             tv_Dap_An_Dung_TN = itemView.findViewById(R.id.tv_Dap_An_Dung_TN);
             tv_Muc_Do_TN = itemView.findViewById(R.id.tv_Muc_Do_TN);
+            btn_del = itemView.findViewById(R.id.btn_del);
+            btn_Edit = itemView.findViewById(R.id.btn_edit);
         }
     }
 
     public interface Listener{
+        void OnItemListener(int pos, MultipleChoice multipleChoice);
+        void OnDeleteListener(MultipleChoice multipleChoice);
 
-        void OnItemListener(int pos, Vocab contact);
     }
+
 }

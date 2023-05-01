@@ -6,43 +6,31 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/row_ta"
+        android:id="@+id/tv_eng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="48dp"
         android:fontFamily="@font/dancing_medium"
         android:text="Tiếng anh"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/raw_tv"
+        android:id="@+id/tv_vnese"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/dancing_medium"
 
         android:text="Tiếng việt"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/row_ta"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_eng"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/row_ta"
-        app:layout_constraintTop_toBottomOf="@+id/row_ta" />
-
-    <TextView
-        android:id="@+id/raw_tuloai"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/dancing_medium"
-        android:text="Từ loại"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.403"
-        app:layout_constraintStart_toEndOf="@+id/row_ta"
-        app:layout_constraintTop_toTopOf="@+id/row_ta" />
+        app:layout_constraintStart_toStartOf="@+id/tv_eng"
+        app:layout_constraintTop_toBottomOf="@+id/tv_eng" />
 
     <ImageView
         android:id="@+id/edit_note"

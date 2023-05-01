@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.doanmb.Model.FillBlanks;
 import com.example.doanmb.Model.MultipleChoice;
+import com.example.doanmb.Model.Note;
 import com.example.doanmb.Model.Vocab;
 
 import java.io.File;
@@ -145,6 +146,21 @@ public class DBHelper {
         db.close();
         return tmp;
     }
+    public long insertTN(MultipleChoice multipleChoice){
+        db = openDB();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Cau_Hoi",multipleChoice.getCau_Hoi());
+        contentValues.put("Dap_An_1",multipleChoice.getDap_An_1());
+        contentValues.put("Dap_An_2",multipleChoice.getDap_An_2());
+        contentValues.put("Dap_An_3",multipleChoice.getDap_An_3());
+        contentValues.put("Dap_An_4",multipleChoice.getDap_An_4());
+        contentValues.put("Dap_An_Dung",multipleChoice.getDap_An_Dung());
+        contentValues.put("Muc_Do",multipleChoice.getMuc_Do());
+        long tmp = db.insert("TracNghiem","",contentValues);
+        db.close();
+        return tmp;
+    }
+
 
     public long update(Vocab vocab){
         db = openDB();
@@ -160,10 +176,30 @@ public class DBHelper {
         db.close();
         return tmp;
     }
+    public long updateTN(MultipleChoice multipleChoice){
+        db = openDB();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Cau_Hoi",multipleChoice.getCau_Hoi());
+        contentValues.put("Dap_An_1",multipleChoice.getDap_An_1());
+        contentValues.put("Dap_An_2",multipleChoice.getDap_An_2());
+        contentValues.put("Dap_An_3",multipleChoice.getDap_An_3());
+        contentValues.put("Dap_An_4",multipleChoice.getDap_An_4());
+        contentValues.put("Dap_An_Dung",multipleChoice.getDap_An_Dung());
+        contentValues.put("Muc_Do",multipleChoice.getMuc_Do());
+        long tmp = db.update("TracNghiem",contentValues,"ID="+ multipleChoice.getId(), null);
+        db.close();
+        return tmp;
+    }
 //
     public long delete(Vocab vocab){
         db = openDB();
         long tmp = db.delete("Vocab", "ID="+ vocab.getId(), null);
+        db.close();
+        return tmp;
+    }
+    public long deleteTN(MultipleChoice multipleChoice){
+        db = openDB();
+        long tmp = db.delete("TracNghiem", "ID="+ multipleChoice.getId(), null);
         db.close();
         return tmp;
     }
@@ -220,4 +256,47 @@ public class DBHelper {
     }
 
 
+    public ArrayList<Note> getNote() {
+        ArrayList<Note> tmp = new ArrayList<>();
+        db = openDB();
+        String sql = "SELECT * FROM Note ";
+        Cursor cursor = db.rawQuery(sql, null);
+        while (cursor.moveToNext()) {
+             int ID = cursor.getInt(0);
+            String Tieng_Viet = cursor.getString(1);
+            String Tieng_Anh = cursor.getString(2);
+            String Tu_Loai = cursor.getString(3);
+            Note note = new Note (ID, Tieng_Viet, Tieng_Anh, Tu_Loai);
+            tmp.add(note);
+        }
+        db.close();
+        return tmp;
+    }
+
+    public long insertNote(Note note){
+        db = openDB();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Tieng_Anh",note.getTieng_Anh());
+        contentValues.put("Tieng_Viet", note.getTieng_Viet());
+        long tmp = db.insert("Note","",contentValues);
+        db.close();
+        return tmp;
+    }
+
+    public long deleteNote(Note note){
+        db = openDB();
+        long tmp = db.delete("Note", "ID="+ note.getID(), null);
+        db.close();
+        return tmp;
+    }
+
+    public long updateNote(Note note){
+        db = openDB();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Tieng_Anh",note.getTieng_Anh());
+        contentValues.put("Tieng_Viet", note.getTieng_Viet());
+        long tmp = db.update("Note",contentValues,"ID="+ note.getID(), null);
+        db.close();
+        return tmp;
+    }
 }

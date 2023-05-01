@@ -1,6 +1,8 @@
 package com.example.doanmb.Activity.Admin.TracNghiem;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
@@ -8,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.doanmb.Activity.Admin.ActivityAdmin;
 import com.example.doanmb.Adapter.TracNghiem.AddMultipleChoiceAdapter;
 import com.example.doanmb.DataBase.DBHelper;
 import com.example.doanmb.Model.MultipleChoice;
@@ -38,7 +41,8 @@ public class ActivityAddMucDoTracNghiem extends AppCompatActivity implements Add
     }
 
     @Override
-    public void OnItemListener(int pos, Vocab contact) {
+    public void OnItemListener(int pos, Vocab Vocab) {
 
     }
+
 }

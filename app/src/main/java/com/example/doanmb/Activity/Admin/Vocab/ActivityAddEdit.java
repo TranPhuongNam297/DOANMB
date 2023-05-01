@@ -22,8 +22,6 @@ public class ActivityAddEdit extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addvocab);
-//        int ID = 0;
-//        String ChuDene = "a";
         edEnglish = findViewById(R.id.edEnglish);
         edTiengViet = findViewById(R.id.edTiengViet);
         edPhatAm = findViewById(R.id.edPhatAm);

@@ -22,7 +22,15 @@ public class MultipleChoice implements Serializable {
         Dap_An_Dung = dap_An_Dung;
         Muc_Do = muc_Do;
     }
-
+    public MultipleChoice(String cau_Hoi, String dap_An_1, String dap_An_2, String dap_An_3, String dap_An_4, String dap_An_Dung, String muc_Do) {
+        Cau_Hoi = cau_Hoi;
+        Dap_An_1 = dap_An_1;
+        Dap_An_2 = dap_An_2;
+        Dap_An_3 = dap_An_3;
+        Dap_An_4 = dap_An_4;
+        Dap_An_Dung = dap_An_Dung;
+        Muc_Do = muc_Do;
+    }
     public MultipleChoice(String muc_Do){
         Muc_Do = muc_Do;
     }

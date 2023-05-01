@@ -8,63 +8,38 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.doanmb.Activity.Admin.Vocab.ActivityShowListVocab;
+import com.example.doanmb.Adapter.Vocab.AddAdapter;
+import com.example.doanmb.Adapter.Vocab.TopicVocabAdapter;
+import com.example.doanmb.DataBase.DBHelper;
+import com.example.doanmb.Model.Vocab;
 import com.example.doanmb.R;
 
-public class ActivityVocab extends AppCompatActivity {
-    Button btn_di1,btn_di2,btn_di3,btn_di4,btn_di5;
+import java.util.ArrayList;
+
+public class ActivityVocab extends AppCompatActivity implements TopicVocabAdapter.Listener {
+    RecyclerView recyclerView;
+    ArrayList<Vocab> vocabs;
+
+    public TopicVocabAdapter topicVocabAdapter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vocab);
+        setContentView(R.layout.activity_showlistchudeuser);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("Tra từ điển");
-        btn_di1 = findViewById(R.id.btn_di1);
-        btn_di2 = findViewById(R.id.btn_di2);
-        btn_di3 = findViewById(R.id.btn_di3);
-        btn_di4 = findViewById(R.id.btn_di4);
-        btn_di5 = findViewById(R.id.btn_di5);
+        DBHelper dbHelper = new DBHelper(ActivityVocab.this);
+        recyclerView = findViewById(R.id.rc_vocabuser);
+        vocabs = dbHelper.getChuDe();
+        topicVocabAdapter = new TopicVocabAdapter(ActivityVocab.this, vocabs, this);
+        recyclerView.setAdapter(topicVocabAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(ActivityVocab.this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.addItemDecoration(new DividerItemDecoration(ActivityVocab.this, LinearLayoutManager.VERTICAL));
 
-        btn_di1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ActivityVocab.this, ActivityShowVocab.class);
-                intent.putExtra("chu_de","ANIMAL");
-                startActivity(intent);
-            }
-        });
-        btn_di2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ActivityVocab.this, ActivityShowVocab.class);
-                intent.putExtra("chu_de","FOOD");
-                startActivity(intent);
-            }
-        });
-        btn_di3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ActivityVocab.this, ActivityShowVocab.class);
-                intent.putExtra("chu_de","FAMILY");
-                startActivity(intent);
-            }
-        });
-        btn_di4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ActivityVocab.this, ActivityShowVocab.class);
-                intent.putExtra("chu_de","FLOWER");
-                startActivity(intent);
-            }
-        });
-        btn_di5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ActivityVocab.this, ActivityShowVocab.class);
-                intent.putExtra("chu_de","TOURISM");
-                startActivity(intent);
-            }
-        });
     }
 
     @Override
@@ -76,5 +51,10 @@ public class ActivityVocab extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void OnItemListener(int pos, Vocab contact) {
+
     }
 }

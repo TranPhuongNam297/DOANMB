@@ -33,7 +33,7 @@ public class ActivityShowVocab extends AppCompatActivity implements VocabAdapter
         Intent intent = getIntent();
         dbHelper = new DBHelper(this);
         recyclerView = findViewById(R.id.view_rc);
-        vocabs = dbHelper.getVocab(intent.getStringExtra("chu_de"));
+        vocabs = dbHelper.getVocab(intent.getStringExtra("Chu_De"));
         vocabAdapter = new VocabAdapter(ActivityShowVocab.this, vocabs, this);
         recyclerView.setAdapter(vocabAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(ActivityShowVocab.this, LinearLayoutManager.VERTICAL, false));
