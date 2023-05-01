@@ -1,6 +1,5 @@
 package com.example.doanmb.Activity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
@@ -15,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.doanmb.Activity.User.DienTu.ActivityBeforefillBlanks;
+import com.example.doanmb.Activity.User.Listening.ActivityListening;
 import com.example.doanmb.Activity.User.TracNghiem.ActivityBeforedoQuestion;
 import com.example.doanmb.Activity.User.Vocab.ActivityOptionVocab;
 import com.example.doanmb.R;
@@ -22,9 +22,9 @@ import com.example.doanmb.R;
 public class ActivityDanhsach extends AppCompatActivity {
 
     Button btnTracNghiem;
-    Button btnKiemTra,btnYoutube;
+    Button btnKiemTra,btnListening;
     Button btnVocab;
-    @SuppressLint("MissingInflatedId")
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +33,8 @@ public class ActivityDanhsach extends AppCompatActivity {
 
         TextView textview2 = findViewById(R.id.textView4);
         setTextViewColor(textview2, getResources().getColor(R.color.threecl), getResources().getColor(R.color.threecl1), getResources().getColor(R.color.threecl2));
-        btnYoutube = findViewById(R.id.btn_addDT);
-        btnYoutube.setOnClickListener(new View.OnClickListener() {
+        btnListening = findViewById(R.id.btn_listening);
+        btnListening.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityDanhsach.this, ActivityListening.class);

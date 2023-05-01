@@ -30,7 +30,7 @@ public class ActivityAdmin extends AppCompatActivity {
         btnAdd = findViewById(R.id.btnAdd);
         btnLogOut = findViewById(R.id.btnLogout);
         btnaddtn = findViewById(R.id.btn_addtn);
-        btnadddt = findViewById(R.id.btn_addDT);
+        btnadddt = findViewById(R.id.btn_listening);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

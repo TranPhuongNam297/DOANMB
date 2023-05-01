@@ -33,7 +33,6 @@ public class ActivityLogin extends AppCompatActivity {
 
         etPassWord = findViewById(R.id.etPassWord);
         etLogin = findViewById(R.id.etLogin);
-        btnDangKy = findViewById(R.id.btnDangNhap);
         btnDangNhap = findViewById(R.id.btnDangKy);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         btnDangNhap.setOnClickListener(new View.OnClickListener() {

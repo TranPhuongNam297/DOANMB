@@ -138,7 +138,7 @@
                     app:srcCompat="@drawable/fillblank" />
 
                 <Button
-                    android:id="@+id/btn_addDT"
+                    android:id="@+id/btn_listening"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_button"
