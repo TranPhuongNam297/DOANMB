@@ -160,6 +160,16 @@ public class DBHelper {
         db.close();
         return tmp;
     }
+    public long insertDT(FillBlanks fillBlanks){
+        db = openDB();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Cau_Hoi",fillBlanks.getCau_Hoi());
+        contentValues.put("Dap_An",fillBlanks.getDap_An());
+        contentValues.put("Muc_Do",fillBlanks.getMuc_Do());
+        long tmp = db.insert("DienTu","",contentValues);
+        db.close();
+        return tmp;
+    }
 
 
     public long update(Vocab vocab){
@@ -173,6 +183,16 @@ public class DBHelper {
         contentValues.put("Vi_Du2", vocab.getVi_Du2());
 
         long tmp = db.update("Vocab", contentValues, "ID="+ vocab.getId(), null);
+        db.close();
+        return tmp;
+    }
+    public long updateDT(FillBlanks fillBlanks){
+        db = openDB();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Cau_Hoi",fillBlanks.getCau_Hoi());
+        contentValues.put("Dap_An",fillBlanks.getDap_An());
+        contentValues.put("Muc_Do",fillBlanks.getMuc_Do());
+        long tmp = db.update("DienTu", contentValues, "ID="+ fillBlanks.getId(), null);
         db.close();
         return tmp;
     }
@@ -194,6 +214,12 @@ public class DBHelper {
     public long delete(Vocab vocab){
         db = openDB();
         long tmp = db.delete("Vocab", "ID="+ vocab.getId(), null);
+        db.close();
+        return tmp;
+    }
+    public long deleleDT(FillBlanks fillBlanks){
+        db = openDB();
+        long tmp = db.delete("DienTu", "ID="+ fillBlanks.getId(), null);
         db.close();
         return tmp;
     }

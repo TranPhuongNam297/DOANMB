@@ -33,4 +33,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/btn_editt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_edit" />
+
+    <ImageView
+        android:id="@+id/btn_dell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_editt"
+        app:layout_constraintEnd_toStartOf="@+id/btn_editt"
+        app:srcCompat="@drawable/icon_delete" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

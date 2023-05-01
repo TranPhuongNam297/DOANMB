@@ -28,6 +28,7 @@ public class ActivityAddMucDoDienTu extends AppCompatActivity implements AddFill
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showlistmucdodt);
         //imgAddChuDe = findViewById(R.id.imgAddChuDe);
+
         DBHelper dbHelper = new DBHelper(ActivityAddMucDoDienTu.this);
         recyclerView = findViewById(R.id.rc_addmucdodt);
         fillBlanks = dbHelper.getMucDoDT();
@@ -41,4 +42,5 @@ public class ActivityAddMucDoDienTu extends AppCompatActivity implements AddFill
     public void OnItemListener(int pos, Vocab contact) {
 
     }
+
 }

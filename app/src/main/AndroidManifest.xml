@@ -50,6 +50,7 @@
         <activity android:name="com.example.doanmb.Activity.Admin.Vocab.LayOutAddChuDe" />
         <activity android:name="com.example.doanmb.Activity.Admin.TracNghiem.ActivityFormTN" />
         <activity android:name="com.example.doanmb.Activity.User.Vocab.ActivityAddNote" />
+        <activity android:name="com.example.doanmb.Activity.Admin.DienTu.ActivityFormDt" />
     </application>
 
 </manifest>

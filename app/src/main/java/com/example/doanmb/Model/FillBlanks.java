@@ -12,6 +12,12 @@ public class FillBlanks {
         Dap_An = dap_An;
         Muc_Do = muc_Do;
     }
+    public FillBlanks( String cau_Hoi, String dap_An, String muc_Do) {
+
+        Cau_Hoi = cau_Hoi;
+        Dap_An = dap_An;
+        Muc_Do = muc_Do;
+    }
 
     public FillBlanks(String muc_Do){
         Muc_Do = muc_Do;
