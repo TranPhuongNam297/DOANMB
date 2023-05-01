@@ -28,7 +28,7 @@ public class ActivityShowVocab extends AppCompatActivity implements VocabAdapter
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_directory);
+        setContentView(R.layout.activity_dictionary);
         ed_search = findViewById(R.id.ed_search);
         Intent intent = getIntent();
         dbHelper = new DBHelper(this);

@@ -66,11 +66,9 @@ public class ActivityCheck extends AppCompatActivity{
             fillBlanks = fillBlanksList.get(Counter);
             tvQues.setText(fillBlanks.getCau_Hoi());
             edCheck.setText("");
-            // kiểm tra trạng thái của bàn phím
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             boolean isKeyboardOpen = imm.isActive();
             if (isKeyboardOpen) {
-                // nếu đang mở thì mới đóng bàn phím
                 imm.hideSoftInputFromWindow(edCheck.getWindowToken(), 0);
             }
             Counter++;
