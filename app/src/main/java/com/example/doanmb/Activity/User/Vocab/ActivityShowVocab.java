@@ -28,9 +28,7 @@ public class ActivityShowVocab extends AppCompatActivity implements VocabAdapter
     RecyclerView recyclerView;
     ArrayList<Vocab> vocabs;
     public VocabAdapter vocabAdapter;
-    int position;
     DBHelper dbHelper;
-    TextInputEditText ed_search;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,13 +43,6 @@ public class ActivityShowVocab extends AppCompatActivity implements VocabAdapter
         recyclerView.setLayoutManager(new LinearLayoutManager(ActivityShowVocab.this, LinearLayoutManager.VERTICAL, false));
         recyclerView.addItemDecoration(new DividerItemDecoration(ActivityShowVocab.this, LinearLayoutManager.VERTICAL));
 
-//        ed_search.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent =new Intent(ActivityShowVocab.this, ActivitySearch.class);
-//                startActivity(intent);
-//            }
-//        });
     }
 
     @Override
@@ -79,10 +70,4 @@ public class ActivityShowVocab extends AppCompatActivity implements VocabAdapter
         }
         return super.onOptionsItemSelected(item);
     }
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater menuInflater = getMenuInflater();
-//        menuInflater.inflate(R.menu.ActivityShowVocab, menu);
-//        return super.onCreateOptionsMenu(menu);
-//    }
 }

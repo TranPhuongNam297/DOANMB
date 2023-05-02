@@ -43,8 +43,6 @@ public class ActivityNote extends AppCompatActivity implements NoteAdapter.Liste
         recyclerView.setAdapter(noteAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(ActivityNote.this, LinearLayoutManager.VERTICAL, false));
         recyclerView.addItemDecoration(new DividerItemDecoration(ActivityNote.this, LinearLayoutManager.VERTICAL));
-
-
         ImageView img_add = findViewById(R.id.imgAddNote);
         img_add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +58,6 @@ public class ActivityNote extends AppCompatActivity implements NoteAdapter.Liste
     @Override
     public void OnDeleteListener(Note note) {
         Intent intent = getIntent();
-//        String ChuDeTruyen = intent.getStringExtra("Chu_De");
         AlertDialog.Builder builder = new AlertDialog.Builder(ActivityNote.this);
         builder.setTitle("Note");
         builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {

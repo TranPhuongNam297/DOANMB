@@ -28,7 +28,7 @@ public class ActivityLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        TextView textview2 = findViewById(R.id.textView);
+        TextView textview2 = findViewById(R.id.tv_settitle);
         setTextViewColor(textview2, getResources().getColor(R.color.threecl), getResources().getColor(R.color.threecl1), getResources().getColor(R.color.threecl2));
 
         etPassWord = findViewById(R.id.etPassWord);

@@ -36,7 +36,6 @@ public class ActivityAddListTN extends AppCompatActivity implements AddTNAdapter
         btn_addCauHoi = findViewById(R.id.btn_addCauHoi);
         Intent intent = getIntent();
         dbHelper = new DBHelper(this);
-
         recyclerView = findViewById(R.id.rc_listtn);
         String Muc_do = intent.getStringExtra("Muc_Do");
         multipleChoices = dbHelper.getQuestion(Muc_do);

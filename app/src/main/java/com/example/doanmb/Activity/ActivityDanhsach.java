@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.doanmb.Activity.User.DienTu.ActivityBeforefillBlanks;
+import com.example.doanmb.Activity.User.Listening.ActivityListListening;
 import com.example.doanmb.Activity.User.Listening.ActivityListening;
 import com.example.doanmb.Activity.User.TracNghiem.ActivityBeforedoQuestion;
 import com.example.doanmb.Activity.User.Vocab.ActivityOptionVocab;
@@ -38,7 +39,7 @@ public class ActivityDanhsach extends AppCompatActivity {
         btnYoutube.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityDanhsach.this, ActivityListening.class);
+                Intent intent = new Intent(ActivityDanhsach.this, ActivityListListening.class);
                 startActivity(intent);
             }
         });

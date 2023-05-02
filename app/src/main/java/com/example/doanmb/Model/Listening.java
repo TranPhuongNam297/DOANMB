@@ -11,6 +11,10 @@ public class Listening {
         FilePath = filePath;
     }
 
+    public Listening(String title) {
+        Title = title;
+    }
+
     public int getID() {
         return ID;
     }

@@ -135,14 +135,14 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/youtube" />
+                    app:srcCompat="@drawable/listening" />
 
                 <Button
                     android:id="@+id/btn_addDT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:text="Học với YouTube"
+                    android:text="Listening Practice"
                     android:background="@drawable/bg_button"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

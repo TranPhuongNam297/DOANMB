@@ -53,6 +53,7 @@
         <activity android:name="com.example.doanmb.Activity.Admin.DienTu.ActivityFormDt" />
         <activity android:name="com.example.doanmb.Activity.ActivitySearch" />
         <activity android:name="com.example.doanmb.Activity.User.Listening.ActivityListening" />
+        <activity android:name="com.example.doanmb.Activity.User.Listening.ActivityListListening" />
     </application>
 
 </manifest>
