@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.example.doanmb.Model.FillBlanks;
+import com.example.doanmb.Model.Listening;
 import com.example.doanmb.Model.MultipleChoice;
 import com.example.doanmb.Model.Note;
 import com.example.doanmb.Model.Vocab;
@@ -364,6 +365,22 @@ public class DBHelper {
         contentValues.put("Tieng_Anh",note.getTieng_Anh());
         contentValues.put("Tieng_Viet", note.getTieng_Viet());
         long tmp = db.update("Note",contentValues,"ID="+ note.getID(), null);
+        db.close();
+        return tmp;
+    }
+    public ArrayList<Listening> getListening() {
+        ArrayList<Listening> tmp = new ArrayList<>();
+        db = openDB();
+        String sql = "SELECT * FROM Listening";
+
+        Cursor cursor = db.rawQuery(sql, null);
+        while (cursor.moveToNext()) {
+            int id = cursor.getInt(0);
+            String Title = cursor.getString(1);
+            String FilePath = cursor.getString(2);
+            Listening listening = new Listening(id, Title, FilePath);
+            tmp.add(listening);
+        }
         db.close();
         return tmp;
     }
