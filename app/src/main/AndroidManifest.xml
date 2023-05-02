@@ -51,6 +51,7 @@
         <activity android:name="com.example.doanmb.Activity.Admin.TracNghiem.ActivityFormTN" />
         <activity android:name="com.example.doanmb.Activity.User.Vocab.ActivityAddNote" />
         <activity android:name="com.example.doanmb.Activity.Admin.DienTu.ActivityFormDt" />
+        <activity android:name="com.example.doanmb.Activity.ActivitySearch" />
     </application>
 
 </manifest>

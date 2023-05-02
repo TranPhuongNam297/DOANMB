@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.doanmb.Model.FillBlanks;
 import com.example.doanmb.Model.MultipleChoice;
@@ -49,11 +50,52 @@ public class DBHelper {
             }
         }
     }
+    public Vocab info(int id ){
+        Vocab vocab = new Vocab();
+        db = openDB();
+        String sql = "SELECT * FROM Vocab WHERE ID=" + id ;
+        Cursor cursor = db.rawQuery(sql, null);
+
+        if (cursor != null) {
+            cursor.moveToFirst();
+            int Id = cursor.getInt(0);
+            String English = cursor.getString(1);
+            String Tieng_Viet = cursor.getString(2);
+            String Phat_Am = cursor.getString(3);
+            String Chu_De = cursor.getString(4);
+            String Vi_Du = cursor.getString(5);
+            String Vi_Du2 = cursor.getString(6);
+            vocab = new Vocab(Id, English, Tieng_Viet, Phat_Am, Chu_De, Vi_Du, Vi_Du2);
+        }
+        db.close();
+
+        return vocab;
+    }
 
     public ArrayList<Vocab> getVocab(String chude) {
         ArrayList<Vocab> tmp = new ArrayList<>();
         db = openDB();
         String sql = "SELECT * FROM Vocab WHERE Chu_De LIKE '%" + chude + "%'";
+
+        Cursor cursor = db.rawQuery(sql, null);
+        while (cursor.moveToNext()) {
+            int id = cursor.getInt(0);
+            String English = cursor.getString(1);
+            String Tieng_Viet = cursor.getString(2);
+            String Phat_Am = cursor.getString(3);
+            String Chu_De = cursor.getString(4);
+            String Vi_Du = cursor.getString(5);
+            String Vi_Du2 = cursor.getString(6);
+            Vocab vocab = new Vocab(id, English, Tieng_Viet, Phat_Am, Chu_De, Vi_Du, Vi_Du2);
+            tmp.add(vocab);
+        }
+        db.close();
+        return tmp;
+    }
+    public ArrayList<Vocab> getAllVocab(){
+        ArrayList<Vocab> tmp = new ArrayList<>();
+        db = openDB();
+        String sql = "SELECT * FROM Vocab";
 
         Cursor cursor = db.rawQuery(sql, null);
         while (cursor.moveToNext()) {
@@ -108,14 +150,16 @@ public class DBHelper {
         db.close();
         return tmp;
     }
-    public ArrayList<Vocab> search(String query){
+    public ArrayList<Vocab> search(String query, String chuDe1) {
         ArrayList<Vocab> tmp = new ArrayList<>();
         db = openDB();
-        String sql = "SELECT * FROM Contact WHERE FNAME LIKE '%" + query + "%' " +
-                "UNION " +
-                "SELECT * FROM Contact WHERE LNAME LIKE '%" + query + "%' ";
+        String sql ="SELECT * FROM Vocab WHERE (EngLish LIKE '%" + query + "%' OR Tieng_Viet LIKE '%" + query + "%') " +
+                "AND Chu_DE = '" + chuDe1 + "'";
+        System.out.println(sql);
+//        Log.d("CHUDE", chuDe1);
+        System.out.println(chuDe1);
         Cursor cursor = db.rawQuery(sql, null);
-        while (cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             int id = cursor.getInt(0);
             String English = cursor.getString(1);
             String Tieng_Viet = cursor.getString(2);
@@ -128,8 +172,6 @@ public class DBHelper {
         }
 
         db.close();
-
-
         return tmp;
     }
 
