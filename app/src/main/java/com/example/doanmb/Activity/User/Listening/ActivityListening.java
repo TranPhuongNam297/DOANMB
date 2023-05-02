@@ -1,63 +1,68 @@
 package com.example.doanmb.Activity.User.Listening;
 
+import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.doanmb.DataBase.DBHelper;
+import com.example.doanmb.Model.Listening;
 import com.example.doanmb.R;
 
+import java.util.ArrayList;
+
 public class ActivityListening extends AppCompatActivity {
-    MediaPlayer mediaPlayer;
+    MediaPlayer player;
+    DBHelper dbHelper = new DBHelper(ActivityListening.this);
+
+    ArrayList<Listening> listenings;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listening);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            mediaPlayer = null;
-        }
-        public void music(View view) {
-            switch (view.getId()){
-                case R.id.button:
-                    if(mediaPlayer == null){
-                        mediaPlayer = MediaPlayer.create(this, R.raw.lt);
-                    }
-                    mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mediaPlayer) {
-                            stopMusic();
+        TextView play = findViewById(R.id.play);
+        listenings = dbHelper.getListening();
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listenings.size() > 0) {
+                    try {
+                        AssetFileDescriptor afd = getAssets().openFd("listening/" + listenings.get(0).getFilePath());
+                        //Khởi tạo Media Player
+                        if (player == null) {
+                            player = new MediaPlayer();
+                        } else {
+                            player.reset();
                         }
-                    });
-                    mediaPlayer.start();
-                    break;
-                case R.id.button2:
-                    if(mediaPlayer != null) {
-                        mediaPlayer.pause();
+                        player.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+                        afd.close();
+                        player.prepare();
+                        player.start();
+                    } catch (Exception ex) {
+                        Toast.makeText(ActivityListening.this, ex.getMessage(), Toast.LENGTH_SHORT).show();
                     }
-                    break;
-                case R.id.button3:
-                    if(mediaPlayer != null){
-                        mediaPlayer.stop();
-                        stopMusic();
-                    }
-                    break;
+                } else {
+                    Toast.makeText(ActivityListening.this, "No listening found", Toast.LENGTH_SHORT).show();
+                }
             }
-        }
+        });
+    }
 
-        private void stopMusic() {
-            mediaPlayer.release();
-            mediaPlayer = null;
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (player != null) {
+            player.release();
+            player = null;
         }
-
-        @Override
-        protected void onStop() {
-            super.onStop();
-            stopMusic();
-        }
-
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
