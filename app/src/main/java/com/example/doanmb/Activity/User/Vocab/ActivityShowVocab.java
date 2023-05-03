@@ -33,6 +33,12 @@ public class ActivityShowVocab extends AppCompatActivity implements VocabAdapter
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showlistvocab);
+
+        setTitle("Vocabulary");
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         Intent intent = getIntent();
         dbHelper = new DBHelper(this);
         recyclerView = findViewById(R.id.view_rc);
@@ -42,6 +48,18 @@ public class ActivityShowVocab extends AppCompatActivity implements VocabAdapter
         recyclerView.setAdapter(vocabAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(ActivityShowVocab.this, LinearLayoutManager.VERTICAL, false));
         recyclerView.addItemDecoration(new DividerItemDecoration(ActivityShowVocab.this, LinearLayoutManager.VERTICAL));
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
 
     }
 
@@ -56,18 +74,5 @@ public class ActivityShowVocab extends AppCompatActivity implements VocabAdapter
         return super.onCreateOptionsMenu(menu);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if (item.getItemId() == R.id.mnuSearch) {
-            Intent intent = getIntent();
-            String Chu_De = intent.getStringExtra("Chu_De");
-            Intent searchIntent = new Intent(ActivityShowVocab.this, ActivitySearch.class);
-            searchIntent.putExtra("Chu_De", Chu_De);
-            Log.d("Chu_De", Chu_De);
-            startActivity(searchIntent);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

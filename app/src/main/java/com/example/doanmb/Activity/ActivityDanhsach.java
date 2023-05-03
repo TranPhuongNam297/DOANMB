@@ -31,7 +31,11 @@ public class ActivityDanhsach extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_danhsach);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        setTitle("Let's go");
 
         TextView textview2 = findViewById(R.id.textView4);
         setTextViewColor(textview2, getResources().getColor(R.color.threecl), getResources().getColor(R.color.threecl1), getResources().getColor(R.color.threecl2));

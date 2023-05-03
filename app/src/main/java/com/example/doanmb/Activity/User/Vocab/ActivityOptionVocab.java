@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -17,6 +18,9 @@ public class ActivityOptionVocab extends AppCompatActivity {
         setContentView(R.layout.activity_optionvocab);
         btnGhiChu = findViewById(R.id.btnGhiChu);
         btntuDien  = findViewById(R.id.btntuDien);
+
+        setTitle("Option");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btntuDien.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,5 +36,16 @@ public class ActivityOptionVocab extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 }

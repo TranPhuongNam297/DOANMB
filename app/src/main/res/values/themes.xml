@@ -4,7 +4,13 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryDark">@color/purple_700</item>
-        <item name="colorAccent">@color/teal_200</item>
+        <item name="colorOnPrimary">@color/teal_200</item>
+
+        <item name="colorSecondary">@color/purple_500</item>
+        <item name="colorSecondaryVariant">@color/purple_700</item>
+        <item name="colorOnSecondary">@color/teal_200</item>
+
+        <item name="android:actionBarStyle">?attr/colorOnPrimary</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>

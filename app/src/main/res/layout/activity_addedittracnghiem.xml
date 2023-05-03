@@ -7,9 +7,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout11"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="407dp"
+        android:layout_height="59dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -17,8 +16,11 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Add_CauHoi"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:background="@drawable/button_bg"
+            android:textStyle="bold"
             android:hint="Câu Hỏi"
+            android:inputType="text"
             android:textColorHint="#00BCD4" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -34,7 +36,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Add_Da1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:background="@drawable/button_bg"
+            android:textStyle="bold"
             android:hint="Đáp án A" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -50,7 +54,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Add_Da2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:background="@drawable/button_bg"
+            android:textStyle="bold"
             android:hint="Đáp Án B" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -66,7 +72,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Add_Da3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:background="@drawable/button_bg"
+            android:textStyle="bold"
             android:hint="Đáp Án C" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,7 +90,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Add_Da4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:background="@drawable/button_bg"
+            android:textStyle="bold"
             android:hint="Đáp Án D" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,15 +108,18 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Add_Da"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:background="@drawable/button_bg"
+            android:textStyle="bold"
             android:hint="Đáp Án đúng" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_OK"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="114dp"
+        android:layout_height="48dp"
         android:layout_marginTop="32dp"
+        android:background="@drawable/bg_orange"
         android:text="Xác nhận"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"

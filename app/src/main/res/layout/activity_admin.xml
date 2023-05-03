@@ -69,8 +69,8 @@
                 <Button
                     android:id="@+id/btnAdd"
                     android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_button"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_orange"
                     android:text="Thêm Từ Điển"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -102,8 +102,8 @@
                 <Button
                     android:id="@+id/btn_addtn"
                     android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_button"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_orange"
                     android:text="Thêm Trắc Nghiệm"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -140,8 +140,8 @@
                 <Button
                     android:id="@+id/btn_addDT"
                     android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_button"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_orange"
                     android:text="Thêm điền từ"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -173,8 +173,8 @@
                 <Button
                     android:id="@+id/btnLogout"
                     android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_button"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_orange"
                     android:text="Logout"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"

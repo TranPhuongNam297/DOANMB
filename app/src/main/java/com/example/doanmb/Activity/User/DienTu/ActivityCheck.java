@@ -3,6 +3,7 @@ package com.example.doanmb.Activity.User.DienTu;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -35,6 +36,11 @@ public class ActivityCheck extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check);
+
+        setTitle("Testing");
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         FindID();
         DBHelper dbHelper = new DBHelper(ActivityCheck.this);
         Intent intent = getIntent();
@@ -56,6 +62,18 @@ public class ActivityCheck extends AppCompatActivity{
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 
     public void showNextQuestion() {

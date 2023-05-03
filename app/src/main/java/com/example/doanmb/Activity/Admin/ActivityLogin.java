@@ -28,12 +28,14 @@ public class ActivityLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        setTitle("Login");
+
         TextView textview2 = findViewById(R.id.tv_settitle);
         setTextViewColor(textview2, getResources().getColor(R.color.threecl), getResources().getColor(R.color.threecl1), getResources().getColor(R.color.threecl2));
 
         etPassWord = findViewById(R.id.etPassWord);
         etLogin = findViewById(R.id.etLogin);
-        btnDangKy = findViewById(R.id.btnDangNhap);
+//        btnDangKy = findViewById(R.id.btnDangNhap);
         btnDangNhap = findViewById(R.id.btnDangKy);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         btnDangNhap.setOnClickListener(new View.OnClickListener() {

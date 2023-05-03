@@ -25,6 +25,9 @@ public class ActivityAddNote extends AppCompatActivity {
         TextInputEditText ed_vneseaddnote = findViewById(R.id.ed_vneseaddnote);
         Button btn_savenote = findViewById(R.id.btn_savenote);
 
+        setTitle("Your word");
+
+
         DBHelper dbHelper = new DBHelper(ActivityAddNote.this);
         Intent intent = getIntent();
         int flag = intent.getIntExtra("flag",0);

@@ -23,7 +23,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.activity_main);
+
+        setTitle("Start");
+
         tvNPT = findViewById(R.id.tvNPT);
         btnStart = findViewById(R.id.btnStart);
         TextView textview2 = findViewById(R.id.tvQuestion);

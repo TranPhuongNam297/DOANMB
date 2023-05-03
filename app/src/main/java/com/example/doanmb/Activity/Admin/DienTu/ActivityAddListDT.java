@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -35,6 +36,10 @@ public class ActivityAddListDT extends AppCompatActivity implements AddDTAdapter
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showlistadddt);
+
+        setTitle("List");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Intent intent = getIntent();
         dbHelper = new DBHelper(this);
         recyclerView = findViewById(R.id.rc_listadddt);
@@ -65,7 +70,17 @@ public class ActivityAddListDT extends AppCompatActivity implements AddDTAdapter
     }
 
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
 
+        if (id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
     @Override
     public void OnItemListener(int pos, FillBlanks fillBlanks) {
 

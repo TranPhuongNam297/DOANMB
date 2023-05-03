@@ -2,6 +2,7 @@ package com.example.doanmb.Activity.Admin.DienTu;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -20,6 +21,10 @@ public class ActivityFormDt extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formadddt);
+
+
+        setTitle("Form");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Add_CauHoi = findViewById(R.id.Add_CauHoi);
         Add_DapAn = findViewById(R.id.Add_DapAn);
         btn_OKELA = findViewById(R.id.btn_OKELA);
@@ -55,6 +60,18 @@ public class ActivityFormDt extends AppCompatActivity {
         });
 
 
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
 
     }
 }

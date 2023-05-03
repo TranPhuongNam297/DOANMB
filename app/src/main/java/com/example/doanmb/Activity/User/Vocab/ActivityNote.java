@@ -3,6 +3,7 @@ package com.example.doanmb.Activity.User.Vocab;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -36,6 +37,12 @@ public class ActivityNote extends AppCompatActivity implements NoteAdapter.Liste
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note);
+
+        setTitle("Note");
+
+
+
+
         dbHelper = new DBHelper(ActivityNote.this);
         recyclerView = findViewById(R.id.rv_note);
         notes = dbHelper.getNote();

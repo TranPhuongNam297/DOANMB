@@ -1,6 +1,7 @@
 package com.example.doanmb.Activity.Admin.DienTu;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
@@ -27,6 +28,9 @@ public class ActivityAddMucDoDienTu extends AppCompatActivity implements AddFill
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showlistmucdodt);
+
+        setTitle("Level");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //imgAddChuDe = findViewById(R.id.imgAddChuDe);
 
         DBHelper dbHelper = new DBHelper(ActivityAddMucDoDienTu.this);
@@ -43,4 +47,15 @@ public class ActivityAddMucDoDienTu extends AppCompatActivity implements AddFill
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
 }

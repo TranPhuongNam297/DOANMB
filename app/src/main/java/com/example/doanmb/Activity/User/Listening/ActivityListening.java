@@ -39,7 +39,11 @@ public class ActivityListening extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listening);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        setTitle("Listening");
+
         ImageView play = findViewById(R.id.play);
         ImageView pause = findViewById(R.id.pause);
         ImageView stop = findViewById(R.id.stop);

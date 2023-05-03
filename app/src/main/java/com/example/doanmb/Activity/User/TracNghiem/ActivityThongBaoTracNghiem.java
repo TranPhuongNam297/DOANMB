@@ -2,6 +2,7 @@ package com.example.doanmb.Activity.User.TracNghiem;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -17,6 +18,10 @@ public class ActivityThongBaoTracNghiem extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tbtracnghiem);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Before test");
+
         btn_de = findViewById(R.id.btn_dedtt);
         btn_tb = findViewById(R.id.btn_trungbinhdtt);
         btn_kho = findViewById(R.id.btn_khodtt);
@@ -44,5 +49,17 @@ public class ActivityThongBaoTracNghiem extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 }
