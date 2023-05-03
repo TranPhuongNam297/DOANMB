@@ -26,7 +26,7 @@ import java.util.Locale;
 
 public class ActivityTracnghiem extends AppCompatActivity {
     TextView tvQuestion, tvContentQues, tvCountDown;
-    Button btnAns1, btnAns2, btnAns3, btnAns4;
+    Button btnAns1, btnAns2, btnAns3, btnAns4, btnBack;
 
     private int choiceSize, choiceCounter;
     private long timedown;
