@@ -1,12 +1,15 @@
 package com.example.doanmb.Activity.Admin.Vocab;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,8 +32,10 @@ public class ActivityAddChuDe extends AppCompatActivity implements AddTheoChuDeA
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listaddchudevocab);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
         setTitle("Add and Edit Vocab");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         imgAddChuDe = findViewById(R.id.imgAddChuDe);
         DBHelper dbHelper = new DBHelper(ActivityAddChuDe.this);
         recyclerView = findViewById(R.id.rc_add);
@@ -42,7 +47,7 @@ public class ActivityAddChuDe extends AppCompatActivity implements AddTheoChuDeA
         imgAddChuDe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityAddChuDe.this,LayOutAddChuDe.class);
+                Intent intent = new Intent(ActivityAddChuDe.this, ActivityLayOutAddChuDe.class);
                 intent.putExtra("flag", 1);
                 startActivity(intent);
             }
@@ -50,17 +55,7 @@ public class ActivityAddChuDe extends AppCompatActivity implements AddTheoChuDeA
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
     @Override
     public void OnItemListener(int pos, Vocab contact) {
 

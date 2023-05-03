@@ -1,6 +1,8 @@
 package com.example.doanmb.Activity.Admin.TracNghiem;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.doanmb.Activity.MainActivity;
@@ -22,9 +25,10 @@ public class ActivityFormTN extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addedittracnghiem);
-
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
         setTitle("Form");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Add_CauHoi = findViewById(R.id.Add_CauHoi);
         Add_Da1 = findViewById(R.id.Add_Da1);
         Add_Da2 = findViewById(R.id.Add_Da2);
@@ -72,15 +76,5 @@ public class ActivityFormTN extends AppCompatActivity {
             }
         });
     }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
 }

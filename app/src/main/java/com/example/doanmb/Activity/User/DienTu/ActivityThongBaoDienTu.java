@@ -2,12 +2,15 @@ package com.example.doanmb.Activity.User.DienTu;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.doanmb.R;
@@ -22,9 +25,10 @@ public class ActivityThongBaoDienTu extends AppCompatActivity {
         btn_dedt= findViewById(R.id.btn_dedtt);
         btn_tbdt = findViewById(R.id.btn_trungbinhdtt);
         btn_khodt = findViewById(R.id.btn_khodtt);
-
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
         setTitle("Before test");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         btn_dedt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,16 +55,6 @@ public class ActivityThongBaoDienTu extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
 
 }

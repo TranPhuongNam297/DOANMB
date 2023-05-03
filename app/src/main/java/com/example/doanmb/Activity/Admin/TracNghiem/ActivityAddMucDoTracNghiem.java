@@ -1,12 +1,15 @@
 package com.example.doanmb.Activity.Admin.TracNghiem;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,11 +34,10 @@ public class ActivityAddMucDoTracNghiem extends AppCompatActivity implements Add
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listaddchudevocab);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
+        setTitle("Level MultipleChoice");
 
-        setTitle("Level MultibleChoice");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        imgAddChuDe = findViewById(R.id.imgAddChuDe);
         DBHelper dbHelper = new DBHelper(ActivityAddMucDoTracNghiem.this);
         recyclerView = findViewById(R.id.rc_add);
         multipleChoices = dbHelper.getMucDo();
@@ -49,15 +51,5 @@ public class ActivityAddMucDoTracNghiem extends AppCompatActivity implements Add
     public void OnItemListener(int pos, Vocab Vocab) {
 
     }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
 }

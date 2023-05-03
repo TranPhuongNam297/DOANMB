@@ -1,8 +1,10 @@
 package com.example.doanmb.Activity.Admin;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextPaint;
 import android.view.MenuItem;
@@ -11,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.doanmb.Activity.Admin.DienTu.ActivityAddMucDoDienTu;
@@ -24,7 +27,8 @@ public class ActivityAdmin extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
-
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
         setTitle("Welcome to Admin");
 
 

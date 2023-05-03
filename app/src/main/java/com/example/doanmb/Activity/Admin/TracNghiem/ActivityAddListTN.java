@@ -3,12 +3,15 @@ package com.example.doanmb.Activity.Admin.TracNghiem;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -34,9 +37,10 @@ public class ActivityAddListTN extends AppCompatActivity implements AddTNAdapter
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showlistaddtnmd);
-
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
         setTitle("List");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         btn_addCauHoi = findViewById(R.id.btn_addCauHoi);
         Intent intent = getIntent();
         dbHelper = new DBHelper(this);
@@ -56,27 +60,8 @@ public class ActivityAddListTN extends AppCompatActivity implements AddTNAdapter
                 startActivity(intent1);
             }
         });
-//        ImageView img_add = findViewById(R.id.img_add);
-//        img_add.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(ActivityAddListTN.this, ActivityAddEdit.class);
-//                startActivity(intent);
-//            }
-//        });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
 
     @Override
     public void OnItemListener(int pos, MultipleChoice multipleChoice) {

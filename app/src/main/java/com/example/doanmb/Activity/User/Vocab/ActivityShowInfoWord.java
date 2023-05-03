@@ -1,10 +1,13 @@
 package com.example.doanmb.Activity.User.Vocab;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.doanmb.DataBase.DBHelper;
@@ -17,6 +20,9 @@ public class ActivityShowInfoWord extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showinfoword);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
+        setTitle("Definition");
         String title ="",english="",phatam="",vi_du="",vi_du2="";
         FindID();
         Intent intent = getIntent();

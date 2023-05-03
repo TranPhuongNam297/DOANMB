@@ -1,6 +1,8 @@
 package com.example.doanmb.Activity.User.Vocab;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -9,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -33,10 +36,11 @@ public class ActivityShowVocab extends AppCompatActivity implements VocabAdapter
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showlistvocab);
-
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
         setTitle("Vocabulary");
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
 
         Intent intent = getIntent();
@@ -51,17 +55,6 @@ public class ActivityShowVocab extends AppCompatActivity implements VocabAdapter
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
 
     @Override
     public void OnItemListener(int pos, Vocab contact) {

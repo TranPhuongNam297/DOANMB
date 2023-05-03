@@ -1,12 +1,15 @@
 package com.example.doanmb.Activity.User.DienTu;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.doanmb.R;
@@ -17,8 +20,10 @@ public class ActivityBeforefillBlanks extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beforefillblanks);
         Button btn_startdt = findViewById(R.id.btn_startdt);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
         setTitle("Nofication");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         btn_startdt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,16 +33,6 @@ public class ActivityBeforefillBlanks extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
 
 }

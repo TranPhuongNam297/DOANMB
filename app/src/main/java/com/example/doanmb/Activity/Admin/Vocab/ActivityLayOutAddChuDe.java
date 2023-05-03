@@ -1,28 +1,32 @@
 package com.example.doanmb.Activity.Admin.Vocab;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.doanmb.DataBase.DBHelper;
-import com.example.doanmb.Model.Vocab;
 import com.example.doanmb.R;
 import com.google.android.material.textfield.TextInputEditText;
 
-public class LayOutAddChuDe extends AppCompatActivity {
+public class ActivityLayOutAddChuDe extends AppCompatActivity {
     TextInputEditText etAddChuDe;
     Button btnSave;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitivy_taobuttonchude);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        DBHelper dbHelper = new DBHelper(LayOutAddChuDe.this);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
+
+        DBHelper dbHelper = new DBHelper(ActivityLayOutAddChuDe.this);
         etAddChuDe = findViewById(R.id.etAddChuDe);
         btnSave = findViewById(R.id.btnSave);
         Intent intent = getIntent();
@@ -47,19 +51,9 @@ public class LayOutAddChuDe extends AppCompatActivity {
     }
 
     private void BackVeMain() {
-        Intent intent = new Intent(LayOutAddChuDe.this,ActivityAddChuDe.class);
+        Intent intent = new Intent(ActivityLayOutAddChuDe.this,ActivityAddChuDe.class);
         startActivity(intent);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
 }

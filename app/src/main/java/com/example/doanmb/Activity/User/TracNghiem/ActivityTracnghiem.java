@@ -2,6 +2,7 @@ package com.example.doanmb.Activity.User.TracNghiem;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.MenuItem;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.doanmb.Activity.ActivityCongra;
@@ -34,7 +36,6 @@ public class ActivityTracnghiem extends AppCompatActivity {
 
     private boolean answer;
 
-    private int Quesnow = 0;
 
     private CountDownTimer countDownTimer;
 
@@ -48,7 +49,9 @@ public class ActivityTracnghiem extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tracnghiem);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
         setTitle("Testing");
         FindID();
 
@@ -112,17 +115,6 @@ public class ActivityTracnghiem extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
 
     private void showNextQuestion() {
         if (choiceCounter < choiceSize) {
@@ -139,7 +131,9 @@ public class ActivityTracnghiem extends AppCompatActivity {
 
             answer = false;
             timedown = 30000;
-
+            if (countDownTimer != null) {
+                countDownTimer.cancel();
+            }
             startCountDown();
 
 
@@ -170,7 +164,10 @@ public class ActivityTracnghiem extends AppCompatActivity {
             @Override
             public void onFinish() {
                 timedown = 0;
-                updateCountDownText();
+                Intent intent = new Intent(ActivityTracnghiem.this, ActivityFail.class);
+                intent.putExtra("Diem", countTrue);
+                intent.putExtra("flag", 1);
+                startActivity(intent);
             }
         }.start();
     }

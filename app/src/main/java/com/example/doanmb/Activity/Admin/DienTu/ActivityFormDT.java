@@ -1,12 +1,14 @@
 package com.example.doanmb.Activity.Admin.DienTu;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.doanmb.DataBase.DBHelper;
@@ -14,17 +16,17 @@ import com.example.doanmb.Model.FillBlanks;
 import com.example.doanmb.R;
 import com.google.android.material.textfield.TextInputEditText;
 
-public class ActivityFormDt extends AppCompatActivity {
+public class ActivityFormDT extends AppCompatActivity {
     TextInputEditText Add_CauHoi,Add_DapAn;
     Button btn_OKELA;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formadddt);
-
-
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
         setTitle("Form");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Add_CauHoi = findViewById(R.id.Add_CauHoi);
         Add_DapAn = findViewById(R.id.Add_DapAn);
         btn_OKELA = findViewById(R.id.btn_OKELA);
@@ -44,7 +46,7 @@ public class ActivityFormDt extends AppCompatActivity {
                 if(flag == 1){
                     FillBlanks fillBlanks = new FillBlanks(CauHoi,DapAn,Muc_Do);
                     dbHelper.insertDT(fillBlanks);
-                    Intent intent1 = new Intent(ActivityFormDt.this,ActivityAddListDT.class);
+                    Intent intent1 = new Intent(ActivityFormDT.this,ActivityAddListDT.class);
                     intent1.putExtra("Muc_DoDT",Muc_Do);
                     startActivity(intent1);
                 }
@@ -52,7 +54,7 @@ public class ActivityFormDt extends AppCompatActivity {
                     int id = getIntent().getExtras().getInt("ID");
                     FillBlanks fillBlanks = new FillBlanks(id,CauHoi,DapAn,Muc_Do);
                     dbHelper.updateDT(fillBlanks);
-                    Intent intent1 = new Intent(ActivityFormDt.this,ActivityAddListDT.class);
+                    Intent intent1 = new Intent(ActivityFormDT.this,ActivityAddListDT.class);
                     intent1.putExtra("Muc_DoDT",Muc_Do);
                     startActivity(intent1);
                 }
@@ -63,15 +65,5 @@ public class ActivityFormDt extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
 }

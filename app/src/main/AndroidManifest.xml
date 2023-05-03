@@ -23,43 +23,66 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.ActivityDanhsach" />
-        <activity android:name=".Activity.User.TracNghiem.ActivityTracnghiem" />
+        <activity android:name=".Activity.ActivityDanhsach"
+            android:parentActivityName=".Activity.MainActivity"/>
+        <activity android:name=".Activity.User.TracNghiem.ActivityTracnghiem"
+            android:parentActivityName=".Activity.User.TracNghiem.ActivityThongBaoTracNghiem"/>
+
         <activity android:name=".Activity.ActivityCongra" />
-        <activity android:name=".Activity.User.DienTu.ActivityCheck" />
-        <activity android:name=".Activity.User.Vocab.ActivityVocab" />
-        <activity android:name=".Activity.User.TracNghiem.ActivityThongBaoTracNghiem" />
-        <activity android:name=".Activity.User.TracNghiem.ActivityBeforedoQuestion" />
-        <activity android:name=".Activity.User.DienTu.ActivityThongBaoDienTu" />
-        <activity android:name=".Activity.User.DienTu.ActivityBeforefillBlanks" />
-        <activity android:name=".Activity.User.Vocab.ActivityShowVocab" />
+        <activity android:name=".Activity.User.DienTu.ActivityCheck"
+           android:parentActivityName=".Activity.User.DienTu.ActivityThongBaoDienTu" />
+        <activity android:name=".Activity.User.Vocab.ActivityVocab"
+            android:parentActivityName=".Activity.User.Vocab.ActivityOptionVocab"/>
+        <activity android:name=".Activity.User.TracNghiem.ActivityThongBaoTracNghiem"
+            android:parentActivityName=".Activity.User.TracNghiem.ActivityBeforedoQuestion"/>
+        <activity android:name=".Activity.User.TracNghiem.ActivityBeforedoQuestion"
+            android:parentActivityName=".Activity.ActivityDanhsach"/>
+        <activity android:name=".Activity.User.DienTu.ActivityThongBaoDienTu"
+            android:parentActivityName=".Activity.User.DienTu.ActivityBeforefillBlanks"/>
+        <activity android:name=".Activity.User.DienTu.ActivityBeforefillBlanks"
+            android:parentActivityName=".Activity.ActivityDanhsach"/>
+        <activity android:name=".Activity.User.Vocab.ActivityShowVocab"
+            android:parentActivityName=".Activity.User.Vocab.ActivityVocab"/>
         <activity android:name=".Activity.ActivityFail" />
-        <activity android:name=".Activity.User.Vocab.ActivityShowInfoWord" />
-        <activity android:name=".Activity.User.Vocab.ActivityOptionVocab"></activity>
-        <activity android:name=".Activity.User.Vocab.ActivityVocab"/>
+        <activity android:name=".Activity.User.Vocab.ActivityShowInfoWord"
+            android:parentActivityName=".Activity.User.Vocab.ActivityShowVocab"/>
+        <activity android:name=".Activity.User.Vocab.ActivityOptionVocab"
+            android:parentActivityName=".Activity.ActivityDanhsach"/>
+        <activity android:name=".Activity.User.Vocab.ActivityVocab"
+            android:parentActivityName=".Activity.User.Vocab.ActivityOptionVocab"/>
 
         <activity android:name=".Activity.User.Vocab.ActivityNote"
             android:parentActivityName=".Activity.User.Vocab.ActivityOptionVocab"/>
 
-        <activity android:name="com.example.doanmb.Activity.Admin.ActivityLogin" />
+        <activity android:name="com.example.doanmb.Activity.Admin.ActivityLogin"
+            android:parentActivityName=".Activity.MainActivity"/>
         <activity android:name="com.example.doanmb.Activity.Admin.ActivityAdmin" />
-        <activity android:name="com.example.doanmb.Activity.Admin.Vocab.ActivityAddEdit" />
-        <activity android:name="com.example.doanmb.Activity.Admin.Vocab.ActivityShowListVocab" />
-        <activity android:name="com.example.doanmb.Activity.Admin.Vocab.ActivityAddChuDe" />
-        <activity android:name="com.example.doanmb.Activity.Admin.TracNghiem.ActivityAddMucDoTracNghiem" />
-        <activity android:name="com.example.doanmb.Activity.Admin.TracNghiem.ActivityAddListTN" />
-        <activity android:name="com.example.doanmb.Activity.Admin.DienTu.ActivityAddMucDoDienTu" />
-        <activity android:name="com.example.doanmb.Activity.Admin.DienTu.ActivityAddListDT" />
-        <activity android:name="com.example.doanmb.Activity.Admin.Vocab.LayOutAddChuDe" />
+        <activity android:name="com.example.doanmb.Activity.Admin.Vocab.ActivityAddEdit"/>
+        <activity android:name="com.example.doanmb.Activity.Admin.Vocab.ActivityShowListVocab"
+            android:parentActivityName=".Activity.Admin.Vocab.ActivityAddChuDe"/>
+        <activity android:name="com.example.doanmb.Activity.Admin.Vocab.ActivityAddChuDe"
+            android:parentActivityName=".Activity.Admin.ActivityAdmin"/>
+        <activity android:name="com.example.doanmb.Activity.Admin.TracNghiem.ActivityAddMucDoTracNghiem"
+            android:parentActivityName=".Activity.Admin.ActivityAdmin"/>
+        <activity android:name="com.example.doanmb.Activity.Admin.TracNghiem.ActivityAddListTN"
+            android:parentActivityName=".Activity.Admin.TracNghiem.ActivityAddMucDoTracNghiem"/>
+        <activity android:name="com.example.doanmb.Activity.Admin.DienTu.ActivityAddMucDoDienTu"
+            android:parentActivityName=".Activity.Admin.ActivityAdmin"/>
+        <activity android:name="com.example.doanmb.Activity.Admin.DienTu.ActivityAddListDT"
+            android:parentActivityName=".Activity.Admin.DienTu.ActivityAddMucDoDienTu"/>
+        <activity android:name="com.example.doanmb.Activity.Admin.Vocab.ActivityLayOutAddChuDe"
+            android:parentActivityName=".Activity.Admin.Vocab.ActivityAddChuDe"/>
         <activity android:name="com.example.doanmb.Activity.Admin.TracNghiem.ActivityFormTN" />
 
         <activity android:name="com.example.doanmb.Activity.User.Vocab.ActivityAddNote"
             android:parentActivityName=".Activity.User.Vocab.ActivityNote"/>
 
-        <activity android:name="com.example.doanmb.Activity.Admin.DienTu.ActivityFormDt" />
+        <activity android:name="com.example.doanmb.Activity.Admin.DienTu.ActivityFormDT"/>
         <activity android:name="com.example.doanmb.Activity.ActivitySearch" />
-        <activity android:name="com.example.doanmb.Activity.User.Listening.ActivityListening" />
-        <activity android:name="com.example.doanmb.Activity.User.Listening.ActivityListListening" />
+        <activity android:name="com.example.doanmb.Activity.User.Listening.ActivityListening"
+            android:parentActivityName=".Activity.User.Listening.ActivityListListening"/>
+        <activity android:name="com.example.doanmb.Activity.User.Listening.ActivityListListening"
+            android:parentActivityName=".Activity.ActivityDanhsach"/>
     </application>
 
 </manifest>

@@ -14,10 +14,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.doanmb.Activity.Admin.DienTu.ActivityFormDt;
+import com.example.doanmb.Activity.Admin.DienTu.ActivityFormDT;
 import com.example.doanmb.Model.FillBlanks;
 import com.example.doanmb.R;
-import com.example.doanmb.Model.Vocab;
 
 import java.util.ArrayList;
 
@@ -56,7 +55,7 @@ public class AddDTAdapter extends RecyclerView.Adapter<AddDTAdapter.FillBlanksVH
         holder.btn_editt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(context, ActivityFormDt.class);
+                Intent intent =new Intent(context, ActivityFormDT.class);
                 Bundle bundle = new Bundle();
                 bundle.putInt("ID",fillBlanks.getId());
                 bundle.putString("Cau_Hoi",fillBlanks.getCau_Hoi());

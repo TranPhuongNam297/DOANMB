@@ -2,6 +2,8 @@ package com.example.doanmb.Activity.User.Listening;
 
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.doanmb.DataBase.DBHelper;
@@ -40,8 +43,9 @@ public class ActivityListening extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listening);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
         setTitle("Listening");
 
         ImageView play = findViewById(R.id.play);
@@ -176,14 +180,5 @@ public class ActivityListening extends AppCompatActivity {
         myHandler.removeCallbacks(updateTime);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

@@ -2,8 +2,10 @@ package com.example.doanmb.Activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextPaint;
 import android.view.MenuItem;
@@ -12,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.doanmb.Activity.User.DienTu.ActivityBeforefillBlanks;
@@ -31,8 +34,9 @@ public class ActivityDanhsach extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_danhsach);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         setTitle("Let's go");
@@ -73,17 +77,7 @@ public class ActivityDanhsach extends AppCompatActivity {
             }
         });
     }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
 
     private void setTextViewColor(TextView textView, int ...color){
         TextPaint paint = textView.getPaint();

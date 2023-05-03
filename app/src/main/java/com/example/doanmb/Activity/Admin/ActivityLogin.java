@@ -1,8 +1,10 @@
 package com.example.doanmb.Activity.Admin;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextPaint;
 import android.view.MenuItem;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.doanmb.R;
@@ -27,7 +30,8 @@ public class ActivityLogin extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
         setTitle("Login");
 
         TextView textview2 = findViewById(R.id.tv_settitle);
@@ -35,9 +39,7 @@ public class ActivityLogin extends AppCompatActivity {
 
         etPassWord = findViewById(R.id.etPassWord);
         etLogin = findViewById(R.id.etLogin);
-//        btnDangKy = findViewById(R.id.btnDangNhap);
         btnDangNhap = findViewById(R.id.btnDangKy);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         btnDangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,16 +56,6 @@ public class ActivityLogin extends AppCompatActivity {
                 }
             }
         });
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     private void setTextViewColor(TextView textView, int ...color){

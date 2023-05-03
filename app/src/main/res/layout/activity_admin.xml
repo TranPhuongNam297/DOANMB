@@ -64,7 +64,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/add" />
+                    app:srcCompat="@drawable/addvocab" />
 
                 <Button
                     android:id="@+id/btnAdd"
@@ -97,7 +97,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/delete" />
+                    app:srcCompat="@drawable/multiplechoice" />
 
                 <Button
                     android:id="@+id/btn_addtn"
@@ -135,7 +135,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/repair" />
+                    app:srcCompat="@drawable/fillblank" />
 
                 <Button
                     android:id="@+id/btn_addDT"

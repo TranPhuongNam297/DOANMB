@@ -1,10 +1,17 @@
 package com.example.doanmb.Activity.Admin.DienTu;
 
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.TextPaint;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,10 +35,10 @@ public class ActivityAddMucDoDienTu extends AppCompatActivity implements AddFill
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showlistmucdodt);
-
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
         setTitle("Level");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //imgAddChuDe = findViewById(R.id.imgAddChuDe);
+
 
         DBHelper dbHelper = new DBHelper(ActivityAddMucDoDienTu.this);
         recyclerView = findViewById(R.id.rc_addmucdodt);
@@ -47,15 +54,6 @@ public class ActivityAddMucDoDienTu extends AppCompatActivity implements AddFill
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
 
-    }
 }

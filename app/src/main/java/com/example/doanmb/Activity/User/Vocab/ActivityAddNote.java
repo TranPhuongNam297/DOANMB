@@ -1,11 +1,14 @@
 package com.example.doanmb.Activity.User.Vocab;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.doanmb.Activity.Admin.Vocab.ActivityAddChuDe;
@@ -24,7 +27,8 @@ public class ActivityAddNote extends AppCompatActivity {
         TextInputEditText ed_engaddnote = findViewById(R.id.ed_engaddnote);
         TextInputEditText ed_vneseaddnote = findViewById(R.id.ed_vneseaddnote);
         Button btn_savenote = findViewById(R.id.btn_savenote);
-
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
         setTitle("Your word");
 
 
