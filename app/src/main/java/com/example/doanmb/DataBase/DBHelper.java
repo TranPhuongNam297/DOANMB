@@ -393,10 +393,10 @@ public class DBHelper {
         return tmp;
     }
 
-    public long deleteCHUDE(Vocab vocab){
+    public long deleteCHUDE(String  chuDe){
         db = openDB();
-        long tmp = db.delete("Vocab", "ID="+ vocab.getId(), null);
+        int result = db.delete("Vocab", "Chu_De=?", new String[] {chuDe});
         db.close();
-        return tmp;
+        return result;
     }
 }

@@ -68,6 +68,7 @@ public class ActivityAddChuDe extends AppCompatActivity implements AddTheoChuDeA
     @Override
     public void OnDeleteListener(Vocab vocab) {
         AlertDialog.Builder builder = new AlertDialog.Builder(ActivityAddChuDe.this);
+        String chude = vocab.getChu_De();
         builder.setTitle("Warning!");
         builder.setMessage("Do you really want to delete this topic?");
         builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
@@ -79,8 +80,9 @@ public class ActivityAddChuDe extends AppCompatActivity implements AddTheoChuDeA
         builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                dbHelper.deleteCHUDE(vocab);
+                dbHelper.deleteCHUDE(chude);
                 vocabs.clear();
+                vocabs.addAll(vocabs = dbHelper.getChuDe());
                 addTheoChuDeAdapter.notifyDataSetChanged();
                 dialogInterface.dismiss();
             }
