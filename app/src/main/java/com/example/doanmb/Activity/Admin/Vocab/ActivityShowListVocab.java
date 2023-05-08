@@ -68,7 +68,8 @@ public class ActivityShowListVocab extends AppCompatActivity implements AddAdapt
         Intent intent = getIntent();
         String ChuDeTruyen = intent.getStringExtra("Chu_De");
         AlertDialog.Builder builder = new AlertDialog.Builder(ActivityShowListVocab.this);
-        builder.setTitle("Vocab");
+        builder.setTitle("Warning!");
+        builder.setMessage("Do you really want to delete this field?");
         builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

@@ -71,7 +71,8 @@ public class ActivityAddListTN extends AppCompatActivity implements AddTNAdapter
         Intent intent = getIntent();
         String Muc_do = intent.getStringExtra("Muc_Do");
         AlertDialog.Builder builder = new AlertDialog.Builder(ActivityAddListTN.this);
-        builder.setTitle("Vocab");
+        builder.setTitle("Warning!");
+        builder.setMessage("Do you really want to delete this field?");
         builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

@@ -45,7 +45,7 @@
             android:parentActivityName=".Activity.User.Vocab.ActivityVocab"/>
         <activity android:name=".Activity.ActivityFail" />
         <activity android:name=".Activity.User.Vocab.ActivityShowInfoWord"
-            android:parentActivityName=".Activity.User.Vocab.ActivityShowVocab"/>
+            android:parentActivityName=".Activity.User.Vocab.ActivityVocab"/>
         <activity android:name=".Activity.User.Vocab.ActivityOptionVocab"
             android:parentActivityName=".Activity.ActivityDanhsach"/>
         <activity android:name=".Activity.User.Vocab.ActivityVocab"

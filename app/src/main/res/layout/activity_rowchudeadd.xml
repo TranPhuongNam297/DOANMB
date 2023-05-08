@@ -17,4 +17,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imgEditTopic"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_chude"
+        app:layout_constraintTop_toTopOf="@+id/btn_chude"
+        app:srcCompat="@drawable/icon_edit" />
+
+    <ImageView
+        android:id="@+id/imgDeleteTopic"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_chude"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_chude"
+        app:srcCompat="@drawable/icon_delete" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

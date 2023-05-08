@@ -384,4 +384,19 @@ public class DBHelper {
         db.close();
         return tmp;
     }
+    public long updateAllChuDe(String oldChuDe, String newChuDe) {
+        db = openDB();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Chu_De", newChuDe);
+        long tmp = db.update("Vocab", contentValues, "Chu_De=?", new String[]{oldChuDe});
+        db.close();
+        return tmp;
+    }
+
+    public long deleteCHUDE(Vocab vocab){
+        db = openDB();
+        long tmp = db.delete("Vocab", "ID="+ vocab.getId(), null);
+        db.close();
+        return tmp;
+    }
 }

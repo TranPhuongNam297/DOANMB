@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundmain">
+    android:background="@drawable/backgroundall">
 
     <TextView
         android:id="@+id/tvtittle"
@@ -12,6 +12,7 @@
         android:layout_height="73dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:textColor="@color/black"
         android:fontFamily="@font/danging_bold"
         android:text="Infoword"
         android:textSize="50dp"
@@ -23,6 +24,7 @@
         android:layout_width="375dp"
         android:layout_height="47dp"
         android:layout_marginTop="24dp"
+        android:textColor="@color/black"
         android:fontFamily="@font/dancing_medium"
         android:text="TextView"
         android:textSize="34sp"
@@ -34,6 +36,7 @@
         android:layout_width="382dp"
         android:layout_height="46dp"
         android:layout_marginTop="16dp"
+        android:textColor="@color/black"
         android:fontFamily="@font/dancing_medium"
         android:text="TextView"
         android:textSize="34sp"
@@ -46,6 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:textColor="@color/black"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/dancing_medium"
         android:text="TextView"
@@ -62,6 +66,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/dancing_medium"
+        android:textColor="@color/black"
         android:text="TextView"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"

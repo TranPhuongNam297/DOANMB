@@ -72,7 +72,8 @@ public class ActivityAddListDT extends AppCompatActivity implements AddDTAdapter
         Intent intent = getIntent();
         String Muc_Do = intent.getStringExtra("Muc_DoDT");
         AlertDialog.Builder builder = new AlertDialog.Builder(ActivityAddListDT.this);
-        builder.setTitle("Xoa");
+        builder.setTitle("Warning!");
+        builder.setMessage("Do you really want to delete this field?");
         builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.doanmb.R;
 
 public class ActivityCongra extends AppCompatActivity {
-    Button btnBack, btnBackAgain;
+    Button btnBack;
     TextView tvScore;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,6 +26,7 @@ public class ActivityCongra extends AppCompatActivity {
         setContentView(R.layout.activity_congra);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
+        setTitle("Congratulations!");
         TextView textview2 = findViewById(R.id.textView5);
         setTextViewColor(textview2, getResources().getColor(R.color.threecl), getResources().getColor(R.color.threecl1), getResources().getColor(R.color.threecl2));
 

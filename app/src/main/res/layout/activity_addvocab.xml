@@ -38,7 +38,6 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/button_bg"
-            android:fontFamily="@font/danging_bold"
             android:inputType="textPersonName"
             android:text="Enter your English word..."
             android:textStyle="bold" />
@@ -63,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/button_bg"
-            android:fontFamily="@font/danging_bold"
+
             android:inputType="textPersonName"
             android:text="Enter your Vietnamese word..."
             android:textStyle="bold" />
@@ -87,7 +86,6 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/button_bg"
-            android:fontFamily="@font/danging_bold"
             android:inputType="textPersonName"
             android:text="Enter your Pronunciation..."
             android:textStyle="bold" />
@@ -112,7 +110,6 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/button_bg"
-            android:fontFamily="@font/danging_bold"
             android:inputType="textPersonName"
             android:text="Enter your Example 1..."
             android:textStyle="bold" />
@@ -137,7 +134,6 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/button_bg"
-            android:fontFamily="@font/danging_bold"
             android:inputType="textPersonName"
             android:text="Enter your Example 2..."
             android:textStyle="bold" />

@@ -43,10 +43,6 @@ public class ActivityNote extends AppCompatActivity implements NoteAdapter.Liste
         ActionBar actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
         setTitle("Note");
-
-
-
-
         dbHelper = new DBHelper(ActivityNote.this);
         recyclerView = findViewById(R.id.rv_note);
         notes = dbHelper.getNote();
@@ -68,9 +64,9 @@ public class ActivityNote extends AppCompatActivity implements NoteAdapter.Liste
 
     @Override
     public void OnDeleteListener(Note note) {
-        Intent intent = getIntent();
         AlertDialog.Builder builder = new AlertDialog.Builder(ActivityNote.this);
         builder.setTitle("Note");
+        builder.setMessage("Do you really want to delete this word ?");
         builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

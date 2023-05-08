@@ -24,6 +24,7 @@ public class ActivityFail extends AppCompatActivity {
         FindID();
         ActionBar actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A770EF")));
+        setTitle("Never give up!");
         btnBack1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

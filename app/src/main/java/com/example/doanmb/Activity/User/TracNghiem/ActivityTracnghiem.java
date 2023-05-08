@@ -130,7 +130,7 @@ public class ActivityTracnghiem extends AppCompatActivity {
             tvQuestion.setText("Question" + choiceCounter);
 
             answer = false;
-            timedown = 30000;
+            timedown = 31000;
             if (countDownTimer != null) {
                 countDownTimer.cancel();
             }

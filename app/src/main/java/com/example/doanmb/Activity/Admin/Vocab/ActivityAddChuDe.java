@@ -1,5 +1,6 @@
 package com.example.doanmb.Activity.Admin.Vocab;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,6 +29,8 @@ public class ActivityAddChuDe extends AppCompatActivity implements AddTheoChuDeA
 
     ArrayList<Vocab> vocabs;
 
+    DBHelper dbHelper;
+
     public AddTheoChuDeAdapter addTheoChuDeAdapter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,7 +41,7 @@ public class ActivityAddChuDe extends AppCompatActivity implements AddTheoChuDeA
         setTitle("Add and Edit Vocab");
 
         imgAddChuDe = findViewById(R.id.imgAddChuDe);
-        DBHelper dbHelper = new DBHelper(ActivityAddChuDe.this);
+        dbHelper = new DBHelper(ActivityAddChuDe.this);
         recyclerView = findViewById(R.id.rc_add);
         vocabs = dbHelper.getChuDe();
         addTheoChuDeAdapter = new AddTheoChuDeAdapter(ActivityAddChuDe.this, vocabs, this);
@@ -60,4 +64,29 @@ public class ActivityAddChuDe extends AppCompatActivity implements AddTheoChuDeA
     public void OnItemListener(int pos, Vocab contact) {
 
     }
+
+    @Override
+    public void OnDeleteListener(Vocab vocab) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(ActivityAddChuDe.this);
+        builder.setTitle("Warning!");
+        builder.setMessage("Do you really want to delete this topic?");
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dbHelper.deleteCHUDE(vocab);
+                vocabs.clear();
+                addTheoChuDeAdapter.notifyDataSetChanged();
+                dialogInterface.dismiss();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
 }
+

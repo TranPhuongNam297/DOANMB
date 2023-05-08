@@ -8,11 +8,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.doanmb.Activity.Admin.Vocab.ActivityAddChuDe;
+import com.example.doanmb.Activity.Admin.Vocab.ActivityLayOutAddChuDe;
 import com.example.doanmb.Activity.Admin.Vocab.ActivityShowListVocab;
+import com.example.doanmb.Activity.User.Vocab.ActivityShowVocab;
 import com.example.doanmb.R;
 import com.example.doanmb.Model.Vocab;
 
@@ -48,6 +52,20 @@ public class AddTheoChuDeAdapter extends RecyclerView.Adapter<AddTheoChuDeAdapte
     public void onBindViewHolder(@NonNull VocabVH holder, int position) {
         Vocab vocab = vocabsFilter.get(position);
         holder.btnChuDe.setText(vocab.getChu_De());
+        holder.imgEditTopic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ActivityLayOutAddChuDe.class);
+                intent.putExtra("Chu_De", vocab.getChu_De());
+                context.startActivity(intent);
+            }
+        });
+        holder.imgDeleteTopic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.OnDeleteListener(vocab);
+            }
+        });
         holder.btnChuDe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,9 +86,12 @@ public class AddTheoChuDeAdapter extends RecyclerView.Adapter<AddTheoChuDeAdapte
 
     public class VocabVH extends RecyclerView.ViewHolder{
         Button btnChuDe;
+        ImageView imgDeleteTopic, imgEditTopic;
         public VocabVH(@NonNull View itemView) {
             super(itemView);
             btnChuDe = itemView.findViewById(R.id.btn_chude);
+            imgDeleteTopic = itemView.findViewById(R.id.imgDeleteTopic);
+            imgEditTopic = itemView.findViewById(R.id.imgEditTopic);
         }
 
 
@@ -79,5 +100,7 @@ public class AddTheoChuDeAdapter extends RecyclerView.Adapter<AddTheoChuDeAdapte
     public interface Listener{
 
         void OnItemListener(int pos, Vocab contact);
+
+        void OnDeleteListener(Vocab vocab);
     }
 }
